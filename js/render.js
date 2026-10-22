@@ -141,7 +141,7 @@ function renderPlans() {
   $('#plan-chips').replaceChildren(chip(null, 'any'), chip(GENERALIST, 'generalist'), ...Object.entries(plans).map(([id, p]) => chip(id, p.label.toLowerCase())));
   const p = state.plan && plans[state.plan];
   $('#plan-blurb').textContent = p
-    ? [p.note, planText(p), `Results show the ${p.label} section: comps that can play it, scored as a ${p.label}.`].filter(Boolean).join(' ')
+    ? [p.note, planText(p)].filter(Boolean).join(' ')
     : state.plan === GENERALIST ? 'Generalist: comps judged on overall coverage, without a plan.'
     : 'Any plan: results show the best core of every section; pick one to see the whole section.';
 }
