@@ -1,0 +1,282 @@
+{
+  "ash": {
+    "2": [
+      {"name": "Longer Reach", "effect": "Increases Phase Breach range by 25m.", "tags": {"rotate": 1}, "must": true},
+      {"name": "Ultimate Cooldown", "effect": "Reduces Phase Breach cooldown by 30s.", "tags": {"intel": 1}}
+    ],
+    "3": [
+      {"name": "Greedy Snare", "effect": "Arc Snare can catch multiple enemies and lasts much longer.", "tags": {"zone": 1}},
+      {"name": "Twin Snares", "effect": "+1 Arc Snare charge.", "tags": {"engage": 1}}
+    ]
+  },
+  "ballistic": {
+    "2": [
+      {"name": "Extra Bullet", "effect": "+1 Whistler charge (three total).", "tags": {"engage": 1}, "unplayable": true},
+      {"name": "Trap Mode", "effect": "Trap will deal more damage and last longer", "tags": {"engage": 1}, "unplayable": true}
+    ],
+    "3": [
+      {"name": "Quiet Time", "effect": "Will no longer cause gun to overheat, will Silence instead. Longer cooldown", "tags": {"zone": 1}, "unplayable": true},
+      {"name": "Killing Time", "effect": "+15s Tempest duration.", "unplayable": true}
+    ]
+  },
+  "bangalore": {
+    "2": [
+      {"name": "Electric Smoke", "effect": "Smoke acts as an EMP: deals 100dmg to enemy tacticals and damages ultimates.", "tags": {"engage": 1, "breach": 1}, "mode": "algs"},
+      {"name": "Cover Me", "effect": "Allies heal inside your smoke; enemies who trigger Double Time get pinged.", "tags": {"sustain": 1, "intel": 1}, "must": true, "mode": "ranked"}
+    ],
+    "3": [
+      {"name": "ECM Payload", "effect": "Rolling Thunder hits harder (+10dmg) and destroys enemy deployables.", "tags": {"damage": 1, "engage": 1}, "mode": "algs"},
+      {"name": "Medal of Honor", "effect": "Faster revives; Double Time triggers when running to downed allies.", "tags": {"revive": 1, "mobility": 1}, "must": true}
+    ]
+  },
+  "fuse": {
+    "2": [
+      {"name": "Pyro Techniques", "effect": "Ultimate leaves fire patches behind for 8s after the bombs go off (doubled radius in 30.1).", "tags": {"zone": 1}},
+      {"name": "Reignition", "effect": "Explosive damage recharges your ultimate (1s per 3 damage)."}
+    ],
+    "3": [
+      {"name": "Big Bang", "effect": "Knuckle Cluster explosions cover 50% more area.", "tags": {"damage": 1}},
+      {"name": "Sticky Bomb", "effect": "Knuckle Cluster projectile is 25% bigger and sticks to enemies; every 7 hits cut its cooldown by 1s.", "tags": {"damage": 1}}
+    ]
+  },
+  "maggie": {
+    "2": [
+      {"name": "Fire Ball", "effect": "Wrecking Ball catches fire and explodes in thermite.", "tags": {"zone": 1, "damage": 1}},
+      {"name": "Gunrunning", "effect": "Your passive move speed applies to SMGs and Pistols too."}
+    ],
+    "3": [
+      {"name": "Big Drill", "effect": "Riot Drill is 50% deeper and wider.", "tags": {"damage": 1}},
+      {"name": "Drillslinger", "effect": "Extra Riot Drill charge, 25% shorter duration.", "tags": {"engage": 1}}
+    ]
+  },
+  "alter": {
+    "2": [
+      {"name": "Eye to Another World", "effect": "Survey Beacon access, threat vision while ADSing.", "tags": {"intel": 1}},
+      {"name": "Controller of Worlds", "effect": "Ring Console access, gain zone overcharge andcan reinforce Hardlight."}
+    ],
+    "3": [
+      {"name": "Staring into the Void", "effect": "Longer scan through her portals (+15s).", "tags": {"intel": 1}},
+      {"name": "Void Breacher", "effect": "Better movement and weapon handling to her and her allies after using a portal.", "tags": {"engage": 1}, "must": true}
+    ]
+  },
+  "axle": {
+    "2": [
+      {"name": "Sliding Shooter", "effect": "Shots fired while sliding are drawn from reserve ammo first.", "tags": {"damage": 1}},
+      {"name": "Long Haul", "effect": "+2s to Nitro Gate slide boost.", "tags": {"rotate": 1}}
+    ],
+    "3": [
+      {"name": "Drone Deployer", "effect": "Kickstart cooldown back down to 90s (-30s).", "tags": {"engage": 1}},
+      {"name": "Super Slider", "effect": "Reduced tactical cooldown; up to 3 active Nitro Gates.", "tags": {"rotate": 1}}
+    ]
+  },
+  "horizon": {
+    "2": [
+      {"name": "Gravity Boots", "effect": "Crouch in the air to fall much faster."},
+      {"name": "Newt Scoot", "effect": "Jump after leaving Gravity Lift to glide.", "tags": {"disengage": 1}}
+    ],
+    "3": [
+      {"name": "Conservation of Energy", "effect": "Landing with Spacewalk restores 25 HP."},
+      {"name": "Knock Expert", "effect": "Gain a tactical charge on knocks.", "tags": {"engage": 1}}
+    ]
+  },
+  "octane": {
+    "2": [
+      {"name": "Thick Skin", "effect": "Take 5 less Stim damage."},
+      {"name": "Squad Rush", "effect": "Allies gain stim after landing from a jump pad.", "tags": {"rotate": 1}}
+    ],
+    "3": [
+      {"name": "Triple Jump", "effect": "Upgrades the Jump Pad to give 3 jumps."},
+      {"name": "Daredevil", "effect": "Tac lasts longer the less health you have.", "tags": {"engage": 1}}
+    ]
+  },
+  "pathfinder": {
+    "2": [
+      {"name": "Field Research", "effect": "Gain access to Survey Beacons, gain threat vision when ADSing", "tags": {"intel": 1}},
+      {"name": "Ringmaster", "effect": "Access ring consoles, gain zone overchange and reinforce Hardlight"}
+    ],
+    "3": [
+      {"name": "Feeling Zippy", "effect": "Second zipline charge; allies move faster on energized ziplines.", "tags": {"rotate": 1}, "must": true},
+      {"name": "Landing Gear", "effect": "Better air control and soft landings."}
+    ]
+  },
+  "revenant": {
+    "2": [
+      {"name": "Ultimate Cooldown", "effect": "-30s Forged Shadows cooldown."},
+      {"name": "Try to Hide", "effect": "Low-health enemies stay marked twice as long.", "tags": {"intel": 1}}
+    ],
+    "3": [
+      {"name": "Tactical Cooldown", "effect": "Reduced Shadow Pounce cooldown by 5s.", "tags": {"engage": 1}},
+      {"name": "Agile Assassin", "effect": "Shadow Pounce charges and fires 50% faster.", "tags": {"engage": 1}}
+    ]
+  },
+  "wraith": {
+    "2": [
+      {"name": "Phase Dome", "effect": "Players within a radius of the channeling portal will enter phase", "tags": {"rotate": 1}, "must": true},
+      {"name": "Sixth Sense", "effect": "Voices warn when squads approach.", "tags": {"intel": 1}}
+    ],
+    "3": [
+      {"name": "Void Jumper", "effect": "Gain double jump while in the Void and longer time in the Void.", "must": true},
+      {"name": "Fast Phase", "effect": "Faster Into the Void wind-up.", "tags": {"disengage": 1}}
+    ]
+  },
+  "bloodhound": {
+    "2": [
+      {"name": "Hidden Sight", "effect": "Using your ultimate refreshes your tactical; scans while cloaked are hidden from enemies.", "tags": {"intel": 1}},
+      {"name": "Bird's Eye", "effect": "White Ravens mark an extra enemy from another squad.", "tags": {"intel": 1}}
+    ],
+    "3": [
+      {"name": "True Predator", "effect": "Shooting briefly interrupts the cloak instead of breaking it.", "tags": {"engage": 1}},
+      {"name": "Hunter's Agility", "effect": "Tactical is faster to use and has a 5s shorter cooldown.", "tags": {"intel": 1}}
+    ]
+  },
+  "crypto": {
+    "2": [
+      {"name": "Network Expansion", "effect": "+25% passive and ultimate range.", "tags": {"intel": 1}},
+      {"name": "Ally.MoveTo()", "effect": "Crypto gets the Trailblazer passive from all allies."}
+    ],
+    "3": [
+      {"name": "Power Coupling", "effect": "Gain ult charge from using Survey Beacons and scanning enemies with drone.", "tags": {"intel": 1}},
+      {"name": "Hackathon", "effect": "Drone recharges twice as fast; Crypto gains a speed boost when it's destroyed."}
+    ]
+  },
+  "seer": {
+    "2": [
+      {"name": "Energizing Focus", "effect": "Regenerate shields when your tactical hits enemies.", "tags": {"sustain": 1}},
+      {"name": "Lasting Beats", "effect": "Ult shows enemies for 5s after leaving the Ult AoE."}
+    ],
+    "3": [
+      {"name": "Home Base", "effect": "Tactical cooldown is 8s while inside your ultimate.", "tags": {"intel": 1}},
+      {"name": "Split Focus", "effect": "+1 tactical charge.", "tags": {"intel": 1}}
+    ]
+  },
+  "sparrow": {
+    "2": [
+      {"name": "Hunt Target", "effect": "Speed boost when running toward a marked enemy.", "tags": {"engage": 1}},
+      {"name": "Extra Traps", "effect": "+1 tactical charge and +2 darts in the world.", "tags": {"intel": 1}}
+    ],
+    "3": [
+      {"name": "Life Siphon", "effect": "Recover health and shields when your ultimate damages enemies.", "tags": {"sustain": 1}},
+      {"name": "Alternate Mode", "effect": "Ultimate gets 3 charges with fewer pulses in a smaller radius.", "tags": {"zone": 1}, "must": true}
+    ]
+  },
+  "valkyrie": {
+    "2": [
+      {"name": "Eyes in the Sky", "effect": "Reveals enemies while skydiving (through walls up to 100m, line of sight to 250m).", "tags": {"intel": 1}},
+      {"name": "Full Coverage", "effect": "Missile Swarm becomes a 4x5 pattern.", "tags": {"zone": 1}}
+    ],
+    "3": [
+      {"name": "Supersonic", "effect": "Skyward Dive launch time reduced by 40%.", "tags": {"disengage": 1}, "must": true},
+      {"name": "Aerial Expert", "effect": "Decreased jetpack activation cost, increased horizontal speed. Consumes fuel slightly faster", "unplayable": true}
+    ]
+  },
+  "vantage": {
+    "2": [
+      {"name": "Controlling My Prey", "effect": "Ring Console access, and gain Controller shield passive."},
+      {"name": "Improved Mark", "effect": "Sniper's Mark is visible through walls, applying mark briefly highlights enemy and reveals healthbars to them", "tags": {"intel": 1}, "must": true}
+    ],
+    "3": [
+      {"name": "Herd Tracker", "effect": "Pinging an enemy tracks their whole team.", "tags": {"intel": 1}, "must": true},
+      {"name": "Sniper Cover", "effect": "Adds a gun shield to the sniper ultimate.", "tags": {"cover": 1}, "unplayable": true}
+    ]
+  },
+  "conduit": {
+    "2": [
+      {"name": "Concurrency", "effect": "Fire Energy Barricade again within 10s at no cost; 2 fewer, tighter jammers.", "tags": {"zone": 1}},
+      {"name": "Jammed Up", "effect": "+25% jammer radius; enemies hit have their HUD jammed for 10s.", "tags": {"zone": 1}}
+    ],
+    "3": [
+      {"name": "Instant Barrier", "effect": "Part of Radiant Transfer's shield arrives instantly; regen lasts 2s less.", "tags": {"sustain": 1}},
+      {"name": "Enduring Barrier", "effect": "Radiant Transfer regen keeps going while taking damage (not ring damage).", "tags": {"sustain": 1}}
+    ]
+  },
+  "gibraltar": {
+    "2": [
+      {"name": "Thunder Dome", "effect": "First enemy to enter the dome will take damage and EMP", "tags": {"zone": 1}, "must": true},
+      {"name": "Dome Healing", "effect": "Smell meds heal double for players while in the dome.", "tags": {"sustain": 1}}
+    ],
+    "3": [
+      {"name": "Triple Bombardment", "effect": "Ult has 3 charges with a smaller radius.", "tags": {"cover": 1}},
+      {"name": "Fast Shotties", "effect": "Move faster with Shotguns, auto-reload them on knocks.", "tags": {"revive": 1}}
+    ]
+  },
+  "lifeline": {
+    "2": [
+      {"name": "Extended Flight", "effect": "1.5s extra Combat Glide.", "tags": {"disengage": 1}},
+      {"name": "Battpack", "effect": "+1 Shield Battery stack size, shield battery count shown on deathboxes", "tags": {"sustain": 1}}
+    ],
+    "3": [
+      {"name": "Enhanced Radio", "effect": "Longer D.O.C. assignment range by 50%.", "tags": {"revive": 1}},
+      {"name": "Tactical Cooldown+", "effect": "-10s heal drone cooldown.", "tags": {"sustain": 1}}
+    ]
+  },
+  "loba": {
+    "2": [
+      {"name": "Wolf's Claws", "effect": "Faster weapon draw and a speed boost after translocating.", "tags": {"engage": 1}},
+      {"name": "Shopping Spree", "effect": "Squad can take an extra item from Black Market.", "tags": {"sustain": 1}}
+    ],
+    "3": [
+      {"name": "Escape Artist", "effect": "Regenerate 25 shield after translocating.", "tags": {"disengage": 1}},
+      {"name": "Brand New Bag", "effect": "Gives the whole squad purple backpacks.", "tags": {"sustain": 1}}
+    ]
+  },
+  "mirage": {
+    "2": [
+      {"name": "Renaissance Man", "effect": "Survey Beacons, Ring Consoles, Munition Boxes and care package scans.", "tags": {"intel": 1}},
+      {"name": "Boozle-Eye", "effect": "Successful Bamboozles also highlight enemies.", "tags": {"intel": 1}}
+    ],
+    "3": [
+      {"name": "Me Two", "effect": "+1 decoy charge."},
+      {"name": "Bamboozle Bonus", "effect": "Successful Bamboozles refresh the tactical."}
+    ]
+  },
+  "newcastle": {
+    "2": [
+      {"name": "Stronghold", "effect": "More Castle Wall health and longer energised duration.", "tags": {"cover": 1}},
+      {"name": "Ready To Rumble", "effect": "Reload all weapons and begin full regeneration after reviving allies.", "tags": {"sustain": 1}}
+    ],
+    "3": [
+      {"name": "Ultimate Savior", "effect": "Castle Wall slam gives allies in the impact area 15s of shield regen.", "tags": {"sustain": 1}},
+      {"name": "Defensive Line", "effect": "Tactical and Passive shields will repel the first enemy that comes near them.", "tags": {"cover": 1, "disengage": 1}}
+    ]
+  },
+  "catalyst": {
+    "2": [
+      {"name": "Resilient Veil", "effect": "Dark Veil lasts longer (+5s); ultimate cooldown 150s to 120s.", "tags": {"disengage": 1}},
+      {"name": "Ferro-Door", "effect": "Rebuilds and reinforces missing doors; up to 6 reinforced doors.", "tags": {"hold": 1}, "must": true}
+    ],
+    "3": [
+      {"name": "Hidden Spikes", "effect": "Spike pools are hidden from enemies until they activate.", "tags": {"zone": 1}, "must": true},
+      {"name": "Ferro-Frenzy", "effect": "+1 max spikes; spikes are 50% smaller but tick faster.", "tags": {"zone": 1}, "unplayable": true}
+    ]
+  },
+  "caustic": {
+    "2": [
+      {"name": "Extra Traps", "effect": "+2 traps in the world and +1 tactical charge.", "tags": {"hold": 1}},
+      {"name": "Breathe It In", "effect": "Regenerate health inside Nox gas.", "tags": {"sustain": 1}}
+    ],
+    "3": [
+      {"name": "Gas Fighter", "effect": "Tactical recharges much faster inside Nox gas.", "tags": {"zone": 1}},
+      {"name": "Particle Diffuser", "effect": "Larger ultimate gas cloud.", "tags": {"zone": 1}}
+    ]
+  },
+  "rampart": {
+    "2": [
+      {"name": "Combat Reserve", "effect": "Larger ammo stacks, extra grenade slots and stowed reloads."},
+      {"name": "Locked and Loaded", "effect": "Faster reloads and infinite ammo while behind intact Amped Shields.", "tags": {"zone": 1}, "must": true}
+    ],
+    "3": [
+      {"name": "Ramped Up", "effect": "Better Sheila handling and spin-up by 20%.", "tags": {"damage": 1}},
+      {"name": "Rebuild Module", "effect": "Amped Cover regenerates and rebuilds it's Amped Shield after a while without damage.", "tags": {"cover": 1}, "must": true}
+    ]
+  },
+  "wattson": {
+    "2": [
+      {"name": "Help Is Here", "effect": "Faster revives, and death boxes contain a Mobile Respawn Beacon.", "tags": {"revive": 1}},
+      {"name": "Ultimate Conductor", "effect": "Damage reduces ultimate cooldown; knocks give 50%."}
+    ],
+    "3": [
+      {"name": "Power Pylon", "effect": "Double Ultimate's HP, max capacity, and shield recharge rate", "tags": {"sustain": 1}, "must": true},
+      {"name": "Energised Healer", "effect": "Syringes and Shield Cells heal double."}
+    ]
+  }
+}

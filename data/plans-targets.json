@@ -1,0 +1,75 @@
+{
+  "plans": {
+    "badger": {
+      "label": "Badger",
+      "targets": {"hold": 4, "zone": 4, "sustain": 3, "cover": 3},
+      "tolerates": ["mobility", "engage", "rotate", "breach"],
+      "ring": "inside",
+      "wins": "placement",
+      "cover": "use",
+      "punishes": ["hawk"],
+      "risks": ["The final ring pulls you out of your building. Know your exit before the last zone."],
+      "note": "Claim a building early and reinforce it."
+    },
+    "ram": {
+      "label": "Ram",
+      "targets": {"breach": 3, "zone": 4, "damage": 3, "engage": 6},
+      "tolerates": ["intel", "disengage", "mobility"],
+      "ring": "inside",
+      "wins": "either",
+      "cover": "remove",
+      "punishes": ["spider", "bad setups"],
+      "risks": ["Slow and committed once it starts. A Hawk catches you mid-siege."],
+      "note": "Take ground by force: crack setups instead of going round them."
+    },
+    "hawk": {
+      "label": "Hawk",
+      "targets": {"engage": 6, "mobility": 4, "rotate": 5},
+      "tolerates": ["hold", "cover", "breach", "intel"],
+      "roles": ["entry", "entry", "secondary"],
+      "ring": "anywhere",
+      "wins": "kills",
+      "cover": "bypass",
+      "punishes": ["ram", "fox"],
+      "risks": ["A bad first push loses the momentum you live on.", "Don't dive a Badger's building."],
+      "note": "Take space fast, over and over."
+    },
+    "spider": {
+      "label": "Spider",
+      "targets": {"cover": 3, "intel": 5, "zone": 4, "sustain": 3},
+      "tolerates": ["rotate", "mobility", "breach"],
+      "ring": "inside",
+      "wins": "kills",
+      "cover": "use",
+      "punishes": ["wolf", "fox"],
+      "risks": ["A porous position is exactly what a Ram punishes."],
+      "note": "Hold a strong spot and eat whatever wanders past."
+    },
+    "wolf": {
+      "label": "Wolf",
+      "targets": {"intel": 5, "engage": 6, "rotate": 5},
+      "tolerates": ["hold", "cover", "breach"],
+      "ring": "edge",
+      "wins": "kills",
+      "cover": "bypass",
+      "punishes": ["fox", "late rotators"],
+      "risks": ["Late rings squeeze the edge, with no position to fall back to."],
+      "note": "Circle the edge and pick off stragglers."
+    },
+    "fox": {
+      "label": "Fox",
+      "targets": {"rotate": 5, "disengage": 4, "intel": 5},
+      "tolerates": ["engage", "damage", "breach", "hold"],
+      "ring": "edge",
+      "wins": "placement",
+      "cover": "avoid",
+      "punishes": [],
+      "risks": ["A Wolf finds you.", "Late rings squeeze the edge."],
+      "note": "Slip along the edge, avoid fights and outlast everyone."
+    }
+  },
+  "noPlan": {
+    "label": "Dodo",
+    "note": "No clear plan. Pick one before you drop, or you'll wander into the first fight."
+  }
+}

@@ -1,0 +1,48 @@
+/* Solo queue page (solo.html). Builds on comp.css: slots, picker, segs, badges. */
+.solo-you { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.solo-select { min-height: 40px; min-width: 200px; padding: 6px 10px; background: var(--surface-2); color: var(--fg); border: 1px solid var(--line); font: inherit; font-size: 14px; }
+.solo-select:focus-visible { outline: 2px solid var(--trim); outline-offset: 1px; }
+.solo-code input[aria-invalid="true"] { color: var(--err); }
+
+/* teammate slots + you */
+.slot.target:not(.filled) { border-color: var(--trim); }
+.slot.target.filled { box-shadow: inset 0 0 0 1px var(--trim); }
+.slot .slot-main { cursor: pointer; }
+.slot-you { border-style: solid; background: var(--surface-2); }
+.slot-you .slot-main { cursor: default; }
+.slot-you .slot-num { color: var(--trim); }
+.mate-state { display: inline-flex; margin: 0 18px 14px; }
+.mate-state .seg { min-width: 64px; font-size: 12px; }
+#solo-picker .pick[disabled] { opacity: .45; cursor: default; }
+#solo-picker[hidden], #solo-filters[hidden] { display: none; }
+@media (max-width: 640px) {
+  .slots { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .slot-main { min-height: 64px; padding-top: 10px; padding-bottom: 10px; }
+  #solo-picker { grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); gap: 6px; }
+  #solo-picker .pick { min-height: 44px; padding: 6px 8px; }
+}
+
+/* suggestions */
+.spicks { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+.spick { background: var(--surface); border: 1px solid var(--line); padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; }
+.spick:first-child { border-color: var(--trim); }
+.spick-head { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: baseline; gap: 10px; }
+.spick-num { font-size: 11px; letter-spacing: .16em; color: var(--muted); }
+.spick-name { font-size: 20px; font-weight: 600; color: var(--white); }
+.spick-star { color: var(--trim); font-size: 16px; }
+.spick-score { text-align: right; line-height: 1; }
+.spick-score b { display: block; font-size: 28px; color: var(--white); }
+.spick-score small { font-size: 10px; letter-spacing: .1em; color: var(--muted); text-transform: uppercase; }
+.spick-meta { margin: 0; font-size: 12px; color: var(--muted); }
+.spick-meta .badge { margin-left: 6px; }
+.spick-class { color: var(--accent-tint); }
+.spick-role.ok { color: var(--trim); }
+.spick-adds { margin: 0; font-size: 12px; color: var(--trim); }
+.spick-best { margin: 0; font-size: 12px; color: var(--muted); }
+.spick-best strong { color: var(--fg); font-weight: 600; }
+.spick-best .badge { margin-left: 4px; }
+.spick-switch { margin: 0; font-size: 12px; color: var(--muted); }
+.spick-switch.risky { color: var(--err); }
+.spick-link { margin-top: auto; padding-top: 6px; font-size: 12px; align-self: flex-start; }
+.salso { margin-top: 12px; }
+.salso span { color: var(--fg); }

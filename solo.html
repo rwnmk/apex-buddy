@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en-GB" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Solo Queue · Team Comp · Apex Legends</title>
+  <meta name="description" content="Queuing alone? Enter the map and what your teammates have picked, and get the three Apex Legends picks that make the best comp.">
+  <link rel="preload" href="fonts/roboto-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/comp.css">
+  <link rel="stylesheet" href="css/solo.css">
+  <script>document.documentElement.classList.replace('no-js', 'js');</script>
+</head>
+<body>
+  <main class="wrap">
+
+    <header class="about">
+      <p class="label">apex legends · tools</p>
+      <h1 class="hero-name">Solo Queue Picker</h1>
+      <p class="lead">Queuing alone? Pick the map, choose who you are, and add whatever your teammates have hovered or locked. You get the three picks that make the best comp, with the plan each one sets up.</p>
+      <p class="meta">Scores are the same as the <a href="./">Team Comp Analyser</a>'s. Picking third, they're exact. Picking first or second, they're what you can expect given what players tend to pick.</p>
+      <p class="meta" id="data-meta"></p>
+    </header>
+
+    <!-- 1. you and the map -->
+    <section class="section" aria-labelledby="you-h">
+      <div class="cmd-head">
+        <h2 id="you-h"><span class="lambda">λ</span> solo --you</h2>
+      </div>
+      <div class="stack-sm">
+        <h3 class="label"><label for="solo-you">player</label></h3>
+        <div class="solo-you">
+          <select id="solo-you" class="solo-select sq"></select>
+          <label class="search solo-code">
+            <span class="lambda" aria-hidden="true">›</span>
+            <span class="visually-hidden">Player code</span>
+            <input type="text" id="solo-code" placeholder="or paste a player code" autocomplete="off" spellcheck="false">
+          </label>
+          <button type="button" class="btn-term btn-sm" id="btn-code">use</button>
+        </div>
+        <p class="meta" id="you-summary"></p>
+      </div>
+      <div class="stack-sm">
+        <h3 class="label">map</h3>
+        <div class="tags" id="solo-map" role="group" aria-label="Map"></div>
+      </div>
+    </section>
+
+    <!-- 2. the lobby -->
+    <section class="section" aria-labelledby="lobby-h">
+      <div class="cmd-head">
+        <h2 id="lobby-h"><span class="lambda">λ</span> solo --lobby</h2>
+        <div class="head-actions">
+          <button type="button" class="btn-term btn-sm" id="btn-new">new match</button>
+        </div>
+      </div>
+      <p class="meta" id="lobby-hint"></p>
+      <ol class="slots" id="mates" aria-label="Teammates"></ol>
+      <div class="filters" id="solo-filters">
+        <label class="search">
+          <span class="lambda" aria-hidden="true">›</span>
+          <span class="visually-hidden">Search legends</span>
+          <input type="search" id="solo-search" placeholder="search, enter to add" autocomplete="off" spellcheck="false">
+        </label>
+      </div>
+      <div class="picker" id="solo-picker"></div>
+    </section>
+
+    <!-- 3. suggestions -->
+    <section class="section" aria-labelledby="pick-h">
+      <div class="cmd-head">
+        <h2 id="pick-h"><span class="lambda">λ</span> solo --pick</h2>
+        <div class="head-actions">
+          <button type="button" class="btn-term btn-sm" id="btn-share" aria-describedby="share-status">copy link</button>
+        </div>
+      </div>
+      <p class="visually-hidden" id="share-status" aria-live="polite"></p>
+      <p class="meta" id="solo-position"></p>
+      <p class="gen-log" id="solo-status" aria-live="polite"></p>
+      <div id="solo-out" aria-live="polite"></div>
+      <p class="meta" id="solo-note"></p>
+    </section>
+
+    <footer class="footer">
+      <span class="eof">-- EOF --</span>
+      <div class="footer-links">
+        <a href="./">analyser</a>
+        <a href="data.html">data</a>
+        <a href="https://rwnmk.github.io/">rwnmk.github.io</a>
+        <a href="https://github.com/rwnmk/apex-comp-analyser" class="icon-link"><i class="fa fa-brands fa-github" aria-hidden="true"></i>source</a>
+      </div>
+    </footer>
+
+  </main>
+
+  <noscript><p class="wrap t-err">This page needs JavaScript.</p></noscript>
+  <script type="module" src="js/soloview.js"></script>
+</body>
+</html>

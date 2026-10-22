@@ -1,0 +1,172 @@
+{
+  "rotate": {
+    "label": "Team rotation",
+    "weight": 3,
+    "phases": {"mid": 0.7, "late": 0.3},
+    "missing": "Nothing to move the whole squad. Rotate early and mindfully or you'll be caught by the ring or third parties.",
+    "style": "mobile",
+    "strong": "Moves as one, so it can rotate early and choose where fights happen.",
+    "levels": {
+      "1": "Helps the squad reposition a little: a short shared move, or a personal tool the team can follow.",
+      "2": "Moves the whole squad a meaningful distance on demand, on a normal cooldown.",
+      "3": "Relocates the whole squad across the map, so you choose where the next fight happens."
+    }
+  },
+  "intel": {
+    "label": "Intel",
+    "weight": 3,
+    "phases": {"early": 0.2, "mid": 0.5, "late": 0.3},
+    "missing": "No recon. You'll be guessing where enemies are, so play off audio and pings.",
+    "style": "info-led",
+    "strong": "Plenty of recon: you should know where teams are before you commit.",
+    "levels": {
+      "1": "Occasional or incidental information: reveals as a side effect, or only up close.",
+      "2": "Reliable on-demand reveals, or useful map-wide information.",
+      "3": "Constant, decisive information: the squad can pick almost every fight."
+    }
+  },
+  "engage": {
+    "label": "Engage",
+    "weight": 2,
+    "phases": {"early": 0.4, "mid": 0.4, "late": 0.2},
+    "missing": "No tool to start fights. You'll rely on raw gunplay & positioning to take good trades.",
+    "style": "aggressive",
+    "strong": "Has the tools to start fights on your own terms and punish mistakes fast.",
+    "levels": {
+      "1": "Can help start a fight: a modest opener or a follow-up.",
+      "2": "A strong opener on a short cooldown, or a reliable way to close distance.",
+      "3": "Built to start fights: forces engagements repeatedly, faster than the enemy can react."
+    }
+  },
+  "disengage": {
+    "label": "Disengage",
+    "weight": 2,
+    "phases": {"mid": 0.5, "late": 0.5},
+    "missing": "No way out of a bad fight. Commit carefully and don't over-peek.",
+    "style": "slippery",
+    "strong": "Can back out of a bad fight instead of dying in it.",
+    "levels": {
+      "1": "A personal or partial escape: gets one player out, or slows a chase.",
+      "2": "Reliably gets the squad out of a bad fight.",
+      "3": "Can rescue the squad from almost any fight, again and again."
+    }
+  },
+  "zone": {
+    "label": "Zone control",
+    "weight": 2,
+    "phases": {"mid": 0.3, "late": 0.7},
+    "missing": "Can't deny open ground. Pushes across open space will be hard to stop.",
+    "style": "controlling",
+    "strong": "Can deny open ground and split up a push.",
+    "levels": {
+      "1": "Denies or slows an area for a few seconds.",
+      "2": "Reliably shapes where enemies can go in a fight.",
+      "3": "Controls large areas for long periods: enemies have to play around it."
+    }
+  },
+  "hold": {
+    "label": "Building lockdown",
+    "weight": 2,
+    "phases": {"late": 1},
+    "missing": "Can't fortify a building. Late-game holds will rely on gunplay & well-timed repositioning.",
+    "style": "defensive",
+    "strong": "Can lock down a building and make it miserable to push.",
+    "levels": {
+      "1": "Makes a held position somewhat harder to push.",
+      "2": "Turns a building into a strong hold, given setup time.",
+      "3": "Locks a building down: pushing it without a counter is a losing trade."
+    }
+  },
+  "sustain": {
+    "label": "Sustain",
+    "weight": 2,
+    "phases": {"mid": 0.4, "late": 0.6},
+    "missing": "No team heals or shields. Long fights favour the other team.",
+    "style": "attritional",
+    "strong": "Out-heals the other team when fights drag on.",
+    "levels": {
+      "1": "Some extra healing or shields for the squad, situationally.",
+      "2": "Meaningful extra healing or shields across a fight.",
+      "3": "Out-heals the other team: you can stay in fights others have to leave."
+    }
+  },
+  "cover": {
+    "label": "Deployable cover",
+    "weight": 1,
+    "phases": {"mid": 0.3, "late": 0.7},
+    "missing": "No on-demand cover. Open ground in endgame is dangerous.",
+    "style": "fortified",
+    "strong": "Brings its own cover for open endgames.",
+    "levels": {
+      "1": "Small or temporary cover for one or two players.",
+      "2": "Reliable deployable cover the squad can use in most fights.",
+      "3": "Big, durable cover on demand: creates a position from nothing."
+    }
+  },
+  "revive": {
+    "label": "Safe revives",
+    "weight": 1,
+    "phases": {"early": 0.3, "mid": 0.4, "late": 0.3},
+    "missing": "No protected or quick revives. A knock is often a lost player.",
+    "style": "resilient",
+    "strong": "A knock doesn't have to be a death: revives can more easily be played around.",
+    "levels": {
+      "1": "Makes some revives safer, through cover, speed or distraction.",
+      "2": "Reliably safe revives: shielded, remote or unseen.",
+      "3": "Revives are a core part of the kit: fast, protected and repeatable."
+    }
+  },
+  "damage": {
+    "label": "Ability damage",
+    "weight": 1,
+    "phases": {"early": 0.3, "mid": 0.4, "late": 0.3},
+    "missing": "Little ability damage. Poke with grenades to soften teams.",
+    "style": "poke-heavy",
+    "strong": "Chips teams down with abilities before the guns come out.",
+    "levels": {
+      "1": "Abilities deal some chip damage.",
+      "2": "Abilities regularly deal meaningful damage or set up kills.",
+      "3": "Abilities are a main damage source and can win fights on their own."
+    }
+  },
+  "mobility": {
+    "label": "Personal mobility",
+    "weight": 1,
+    "phases": {"early": 0.5, "mid": 0.5},
+    "style": "fast",
+    "strong": "Quick on their feet: first to loot, first to the fight, first out of it.",
+    "missing": "No personal mobility, foresight & positioning is crucial for all members",
+    "levels": {
+      "1": "Moves a bit faster, or has a small reposition.",
+      "2": "A strong personal movement tool, used in every fight.",
+      "3": "Movement is the kit: faster than anyone, all the time."
+    }
+  },
+  "loot": {
+    "label": "Loot economy",
+    "weight": 1,
+    "phases": {"early": 1},
+    "from": {"mobility": 0.5},
+    "style": "well-stocked",
+    "missing": "Slow to gear up. Expect to fight early with what you land on.",
+    "strong": "Gears up fast and fights the mid-game better equipped.",
+    "levels": {
+      "1": "Some extra access to loot.",
+      "2": "Regularly gets the squad better or extra loot.",
+      "3": "Gears the whole squad up faster than anyone else."
+    }
+  },
+  "breach": {
+    "label": "Breach",
+    "weight": 1.5,
+    "phases": {"mid": 0.3, "late": 0.7},
+    "missing": "No way to crack a fortified building. Bunkered teams in endgame will be hard to dislodge.",
+    "style": "aggressive",
+    "strong": "Can crack a fortified building and force a team out.",
+    "levels": {
+      "1": "Can soften a fortified position: disrupts traps or forces movement.",
+      "2": "Can break a fortified building with commitment.",
+      "3": "Built to crack fortified positions: destroys or bypasses setups outright."
+    }
+  }
+}

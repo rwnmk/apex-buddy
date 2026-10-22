@@ -1,0 +1,512 @@
+{
+  "classes": {
+    "assault": {
+      "label": "Assault",
+      "perks": [
+        {
+          "name": "Battle Surge",
+          "effect": "Breaking an enemy's shield boosts sprint and reload speed.",
+          "tags": {"engage": 1}
+        },
+        {"name": "Combat Reserve", "effect": "Carry extra ammo and ordnance."},
+        {
+          "name": "Stowed Reload",
+          "effect": "Stowed weapons reload automatically after a short delay."
+        }
+      ]
+    },
+    "skirmisher": {
+      "label": "Skirmisher",
+      "perks": [
+        {
+          "name": "Trailblazer",
+          "effect": "Allies get a speed boost when running toward you from long distances.",
+          "tags": {"rotate": 1}
+        },
+        {
+          "name": "Care Package Insight",
+          "effect": "Reveals a care package's contents, including its best item."
+        },
+        {"name": "Charged Knock", "effect": "Restores health and shields on a knock."}
+      ]
+    },
+    "recon": {
+      "label": "Recon",
+      "perks": [
+        {
+          "name": "Survey Beacons",
+          "effect": "Scanning a Survey Beacon briefly reveals nearby enemy positions.",
+          "tags": {"intel": 1}
+        },
+        {"name": "Threat Vision", "effect": "Threat vision while aiming down sights."}
+      ]
+    },
+    "support": {
+      "label": "Support",
+      "perks": [
+        {
+          "name": "Revive Expert",
+          "effect": "Faster revives (not D.O.C.), revives provide health regen. Banner crafting & ally deathboxes spawn Mobile Respawn Beacon",
+          "tags": {"revive": 1}
+        }
+      ]
+    },
+    "controller": {
+      "label": "Controller",
+      "perks": [
+        {
+          "name": "Ring Consoles",
+          "effect": "Reveals the next ring; activating one again lets you call an EVAC.",
+          "tags": {"rotate": 1}
+        },
+        {
+          "name": "Reinforce Hardlight",
+          "effect": "Reinforce or rebuild Hardlight meshes to fortify an area.",
+          "tags": {"hold": 1}
+        },
+        {
+          "name": "Zone Overcharge",
+          "effect": "+25 shield capacity and slow shield regen while inside the safe zone."
+        }
+      ]
+    }
+  },
+  "legends": [
+    {
+      "id": "ash",
+      "name": "Ash",
+      "class": "assault",
+      "kit": {
+        "passive": "A dash.",
+        "tactical": "Arc Snare: spinning snare that tethers the nearest enemy.",
+        "ultimate": "Phase Breach: one-way portal to a targeted spot."
+      },
+      "strengths": [
+        "Lots of opportunity to outplay with dash",
+        "Death box info leads you straight to weakened fights.",
+        "Snare plus portal is a strong dive."
+      ],
+      "weaknesses": [
+        "Portal is one-way, so a bad dive can't be undone.",
+        "Little to offer when holding position."
+      ],
+      "notes": ""
+    },
+    {
+      "id": "ballistic",
+      "name": "Ballistic",
+      "class": "assault",
+      "kit": {
+        "passive": "The Sling: stores a third weapon.",
+        "tactical": "Whistler: overheats an enemy's gun if they keep firing.",
+        "ultimate": "Tempest: nearby allies get speed, faster reloads and infinite ammo."
+      },
+      "strengths": ["Tempest is a strong team-wide push buff.", "A third gun covers every range."],
+      "weaknesses": ["No escape or team movement.", "Whistler is easy to play around once spotted."],
+      "notes": ""
+    },
+    {
+      "id": "bangalore",
+      "name": "Bangalore",
+      "class": "assault",
+      "kit": {
+        "passive": "Double Time: speed boost when shot at while sprinting.",
+        "tactical": "Smoke Launcher: canister that forms a smoke wall.",
+        "ultimate": "Rolling Thunder: creeping artillery strike."
+      },
+      "strengths": [
+        "Smoke wins revives, resets and crossings over open ground.",
+        "Ult forces teams out of cover and breaks up pushes."
+      ],
+      "weaknesses": [
+        "Smoke blinds your own team too.",
+        "No team movement or intel.",
+        "Ult can wreck your own push."
+      ],
+      "notes": ""
+    },
+    {
+      "id": "fuse",
+      "name": "Fuse",
+      "class": "assault",
+      "kit": {
+        "passive": "Grenadier: extra grenades per slot; throws are faster and further.",
+        "tactical": "Knuckle Cluster: cluster bomb of airburst explosives.",
+        "ultimate": "Piercing shot that sprays smaller explosives where it lands. Alternate fire breaches buildings"
+      },
+      "strengths": [
+        "Constant ability poke softens teams before a push.",
+        "Great at flushing campers out of cover.",
+        "New rocketjump is awesome"
+      ],
+      "weaknesses": ["Tac damage is attritional, not bursty - it needs follow-up."],
+      "notes": ""
+    },
+    {
+      "id": "maggie",
+      "name": "Mad Maggie",
+      "class": "assault",
+      "kit": {
+        "passive": "Highlights damaged enemies; moves faster with a shotgun out.",
+        "tactical": "Riot Drill: burns through obstacles at enemies behind cover.",
+        "ultimate": "Wrecking Ball: drops speed pads and detonates near enemies."
+      },
+      "strengths": [
+        "Drill denies cover, including Gibby domes and doors.",
+        "Wrecking Ball gives the whole team speed for a push."
+      ],
+      "weaknesses": [
+        "Very little defensive utility.",
+        "Wants close range, so she struggles in long-range fights."
+      ],
+      "notes": ""
+    },
+    {
+      "id": "alter",
+      "name": "Alter",
+      "class": "skirmisher",
+      "kit": {
+        "passive": "Gift from the Rift: sees and takes items from death boxes through walls.",
+        "tactical": "Void Passage: portal through surfaces under 25m thick.",
+        "ultimate": "Void Nexus: point the squad can recall to."
+      },
+      "strengths": [
+        "Nexus is a guaranteed team escape.",
+        "Wall portals give surprise angles into or from buildings."
+      ],
+      "weaknesses": [
+        "Nexus has to be set up before the fight, can be camped.",
+        "Void Passages can help and hinder."
+      ],
+      "notes": ""
+    },
+    {
+      "id": "axle",
+      "name": "Axle",
+      "class": "skirmisher",
+      "kit": {
+        "passive": "Drift: more speed and control while sliding.",
+        "tactical": "Nitro Gate: gate that gives anyone high-speed slides.",
+        "ultimate": "Kickstart: enemy-seeking drone that launches targets into the air."
+      },
+      "strengths": [
+        "Nitro Gate speeds up the whole team.",
+        "Kickstart knocks enemies out of cover and out of position."
+      ],
+      "weaknesses": ["Gate can become a fast lane for enemies.", "No intel or sustain."],
+      "notes": ""
+    },
+    {
+      "id": "horizon",
+      "name": "Horizon",
+      "class": "skirmisher",
+      "kit": {
+        "passive": "Spacewalk: better air control and less fall damage.",
+        "tactical": "Gravity Lift: lifts the team vertically.",
+        "ultimate": "Black Hole: pulls enemies together."
+      },
+      "strengths": [
+        "Lift reaches height or gives a quick reset.",
+        "Black Hole groups enemies up for grenades and AoE."
+      ],
+      "weaknesses": [
+        "Players on the lift are an easy target.",
+        "Ult is much weaker without AoE damage to follow it up."
+      ],
+      "notes": ""
+    },
+    {
+      "id": "octane",
+      "name": "Octane",
+      "class": "skirmisher",
+      "kit": {
+        "passive": "Swift Mend: automatic health regen.",
+        "tactical": "Stim: faster movement at a health cost.",
+        "ultimate": "Launch Pad: jump pad that launches teammates."
+      },
+      "strengths": ["Pad is a fast team push or escape.", "Great at entry and grabbing third-party fights."],
+      "weaknesses": ["Easy to run in too far ahead of the team.", "Little utility once the fight starts."],
+      "notes": ""
+    },
+    {
+      "id": "pathfinder",
+      "name": "Pathfinder",
+      "class": "skirmisher",
+      "kit": {
+        "passive": "Insider Knowledge: scans survey beacons to reveal the next ring.",
+        "tactical": "Grappling Hook: two charges.",
+        "ultimate": "Zipline Gun: zipline everyone can use."
+      },
+      "strengths": [
+        "Zipline gets the team to height or out of trouble.",
+        "Grapple lets him reach any high ground."
+      ],
+      "weaknesses": ["Ziplines are loud and visible.", "No intel or defensive utility."],
+      "notes": ""
+    },
+    {
+      "id": "revenant",
+      "name": "Revenant",
+      "class": "skirmisher",
+      "kit": {
+        "passive": "Highlights nearby low-health enemies; faster crouch walk.",
+        "tactical": "Shadow Pounce: chargeable forward leap.",
+        "ultimate": "Forged Shadows: shroud that absorbs damage and regenerates."
+      },
+      "strengths": [
+        "Pounce plus shadows is a fast dive onto weak players.",
+        "Good at finishing knocked players."
+      ],
+      "weaknesses": ["Does almost nothing for the team as a whole.", "A bad pounce leaves him exposed."],
+      "notes": ""
+    },
+    {
+      "id": "wraith",
+      "name": "Wraith",
+      "class": "skirmisher",
+      "kit": {
+        "passive": "Voices from the Void: warns of danger.",
+        "tactical": "Into the Void: fast travel while immune to damage.",
+        "ultimate": "Dimensional Rift: portal between two points for 60s."
+      },
+      "strengths": ["Portal is a flexible rotation, escape or flank.", "Void makes her very hard to finish off."],
+      "weaknesses": ["Portal has to be planned ahead.", "Enemies can follow you through it."],
+      "notes": ""
+    },
+    {
+      "id": "bloodhound",
+      "name": "Bloodhound",
+      "class": "recon",
+      "kit": {
+        "passive": "Tracker: sees enemy footprints; look at ravens to reveal nearby enemies.",
+        "tactical": "Eye of the Allfather: forward scan that reveals enemies.",
+        "ultimate": "Allfather's Cloak: dome device that cloaks anyone inside."
+      },
+      "strengths": [
+        "Regular scans tell the team exactly when to push.",
+        "Cloak dome lets you revive or reposition hidden."
+      ],
+      "weaknesses": ["Cloak hides enemies inside too.", "No team movement."],
+      "notes": ""
+    },
+    {
+      "id": "crypto",
+      "name": "Crypto",
+      "class": "recon",
+      "kit": {
+        "passive": "Neurolink: marks enemies his drone spots within 30m.",
+        "tactical": "Surveillance Drone: aerial view.",
+        "ultimate": "Drone EMP: shield damage, slow and disables traps."
+      },
+      "strengths": [
+        "Safe, steady intel from a distance.",
+        "EMP is a strong opener and clears Wattson/Caustic setups, helpful when breaching."
+      ],
+      "weaknesses": ["Vulnerable while flying the drone.", "No movement for the team."],
+      "notes": ""
+    },
+    {
+      "id": "seer",
+      "name": "Seer",
+      "class": "recon",
+      "kit": {
+        "passive": "Heart Seeker: hears and sees nearby heartbeats while aiming down sights.",
+        "tactical": "Focus of Attention: micro-drones that reveal enemies through walls.",
+        "ultimate": "Exhibit: sphere that reveals enemies who move fast or fire."
+      },
+      "strengths": [
+        "Instant intel before and during a fight.",
+        "Exhibit makes enemy revives and heals very risky."
+      ],
+      "weaknesses": ["No mobility or escape.", "Weaker when the fight is chaotic and spread out."],
+      "notes": ""
+    },
+    {
+      "id": "sparrow",
+      "name": "Sparrow",
+      "class": "recon",
+      "kit": {
+        "passive": "Double jump, or launch up a wall.",
+        "tactical": "Tracker dart that reveals enemies in its line of sight.",
+        "ultimate": "Arrow that releases six damaging blasts and slows everyone nearby."
+      },
+      "strengths": ["Intel without giving up personal mobility.", "Ult denies an area and slows pushes."],
+      "weaknesses": ["Mobility is just for him.", "Ult slows your own team too."],
+      "notes": ""
+    },
+    {
+      "id": "valkyrie",
+      "name": "Valkyrie",
+      "class": "recon",
+      "kit": {
+        "passive": "VTOL Jets: jetpack flight with refilling fuel.",
+        "tactical": "Missile Swarm: mini-rockets that stun.",
+        "ultimate": "Skyward Dive: skydive launch that allies can join."
+      },
+      "strengths": [
+        "Best long-distance team rotation in the game.",
+        "Ult doubles as an escape and as a scan of the area."
+      ],
+      "weaknesses": ["Ult landing spot is predictable and easy to punish.", "Big target while flying."],
+      "notes": ""
+    },
+    {
+      "id": "vantage",
+      "name": "Vantage",
+      "class": "recon",
+      "kit": {
+        "passive": "Spotter's Lens: scouting through her eyepiece; tracking teams charges her ult.",
+        "tactical": "Echo Relocation: launches her toward her bat, Echo.",
+        "ultimate": "Sniper's Mark: mark that gives the team a damage bonus."
+      },
+      "strengths": ["Long-range info and damage.", "Good at punishing teams that are rotating."],
+      "weaknesses": ["Echo only moves her, not the team.", "Weak up close."],
+      "notes": ""
+    },
+    {
+      "id": "conduit",
+      "name": "Conduit",
+      "class": "support",
+      "kit": {
+        "passive": "Savior's Speed: speed burst when running to a teammate out of tactical range.",
+        "tactical": "Radiant Transfer: gives a teammate temporary shields (two charges).",
+        "ultimate": "Energy Barricade: shield-jamming devices that damage and slow."
+      },
+      "strengths": [
+        "Instant shields mid-fight win close trades.",
+        "Ult zones off an area and drains enemy shields."
+      ],
+      "weaknesses": ["Shields are temporary.", "Shield transfer needs line of sight to the teammate."],
+      "notes": ""
+    },
+    {
+      "id": "gibraltar",
+      "name": "Gibraltar",
+      "class": "support",
+      "kit": {
+        "passive": "Fortified + Gun Shield: shield while aiming down sights.",
+        "tactical": "Dome of Protection: dome that blocks attacks.",
+        "ultimate": "Defensive Bombardment: mortar strike on a marked position."
+      },
+      "strengths": ["Dome makes revives and heals safe.", "Bombardment forces teams to move."],
+      "weaknesses": ["Domes can trap your own team.", "Big hitbox and no mobility."],
+      "notes": ""
+    },
+    {
+      "id": "lifeline",
+      "name": "Lifeline",
+      "class": "support",
+      "kit": {
+        "passive": "D.O.C. revives teammates; also has Combat Glide.",
+        "tactical": "D.O.C. Heal Drone: heals nearby allies.",
+        "ultimate": "Halo Shield: blocks bullets and speeds up healing inside."
+      },
+      "strengths": ["Best sustain in the game.", "D.O.C. revives keep you shooting while a teammate gets up."],
+      "weaknesses": ["Not much engage or damage.", "No team movement."],
+      "notes": ""
+    },
+    {
+      "id": "loba",
+      "name": "Loba",
+      "class": "support",
+      "kit": {
+        "passive": "Eye for Quality: sees epic and legendary loot through walls.",
+        "tactical": "Burglar's Best Friend: Jump Drive bracelet teleport.",
+        "ultimate": "Black Market Boutique: pulls nearby loot into your inventory."
+      },
+      "strengths": [
+        "Black Market keeps the team stocked on heals, ammo and grenades.",
+        "Bracelet reaches height or escapes alone."
+      ],
+      "weaknesses": ["Little direct impact on fights.", "Bracelet only moves her."],
+      "notes": ""
+    },
+    {
+      "id": "mirage",
+      "name": "Mirage",
+      "class": "support",
+      "kit": {
+        "passive": "Cloaks automatically while using beacons or reviving.",
+        "tactical": "Psyche Out: holographic decoy.",
+        "ultimate": "Life of the Party: a team of decoys."
+      },
+      "strengths": ["Cloaked revives are hard to stop.", "Decoys bait shots and reveal where enemies are."],
+      "weaknesses": ["Decoys do nothing against experienced players.", "Little hard utility."],
+      "notes": ""
+    },
+    {
+      "id": "newcastle",
+      "name": "Newcastle",
+      "class": "support",
+      "kit": {
+        "passive": "Fortified + Retrieve the Wounded: drags downed allies behind a Revive Shield.",
+        "tactical": "Mobile Shield: controllable drone with a moving shield.",
+        "ultimate": "Castle Wall: leap that builds a fortified stronghold."
+      },
+      "strengths": [
+        "Revives are safe even in the open.",
+        "Castle Wall gives instant cover, on a teammate or on enemies."
+      ],
+      "weaknesses": ["Big and slow.", "Mobile Shield is easy to shoot down."],
+      "notes": ""
+    },
+    {
+      "id": "catalyst",
+      "name": "Catalyst",
+      "class": "controller",
+      "kit": {
+        "passive": "Barricade: reinforces up to four doors.",
+        "tactical": "Piercing Spikes: ferrofluid patch that spikes near enemies.",
+        "ultimate": "Dark Veil: wall that slows and blinds enemies who pass through it."
+      },
+      "strengths": [
+        "Veil splits teams and buys time to reset or rotate.",
+        "Reinforced doors make buildings very safe."
+      ],
+      "weaknesses": ["Little damage or engage.", "Veil can block your own push."],
+      "notes": ""
+    },
+    {
+      "id": "caustic",
+      "name": "Caustic",
+      "class": "controller",
+      "kit": {
+        "passive": "Fortified + Nox Vision: sees enemies inside his gas.",
+        "tactical": "Nox Gas Trap: canisters that release gas.",
+        "ultimate": "Nox Gas Grenade: blankets a large area in gas."
+      },
+      "strengths": ["Holds a building like nothing else.", "Gas slows pushes and reveals enemies to him."],
+      "weaknesses": ["Slow. You need to rotate early.", "Weak in the open with nothing to anchor traps to."],
+      "notes": ""
+    },
+    {
+      "id": "rampart",
+      "name": "Rampart",
+      "class": "controller",
+      "kit": {
+        "passive": "Bigger mags and faster reloads with LMGs and the Minigun.",
+        "tactical": "Amped Cover: crouch wall that powers up into full cover.",
+        "ultimate": "Sheila: mounted minigun anyone can use."
+      },
+      "strengths": ["Instant cover in open endgame circles.", "Amped walls win long-range trades."],
+      "weaknesses": ["Walls break easily early in the match.", "No escape."],
+      "notes": ""
+    },
+    {
+      "id": "wattson",
+      "name": "Wattson",
+      "class": "controller",
+      "kit": {
+        "passive": "Ultimate Accelerants fully charge her ultimate.",
+        "tactical": "Perimeter Security: electrified fences between nodes.",
+        "ultimate": "Interception Pylon: destroys ordnance and repairs shields."
+      },
+      "strengths": [
+        "Pylon shuts down grenade spam and Gibby/Fuse ults.",
+        "Fences control choke points for a long time."
+      ],
+      "weaknesses": ["Needs setup time.", "No mobility."],
+      "notes": ""
+    }
+  ]
+}

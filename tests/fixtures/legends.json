@@ -1,0 +1,2613 @@
+{
+  "meta": {
+    "season": "Season 30",
+    "updated": "2026-10-18",
+    "upgradesChecked": "Season 30 (30.1 mid-season patch). Not all upgrades have been reviewed yet (2026-10-19)",
+    "classesChecked": "Class perks per the EA forums class-perk overview (Sept 2026).",
+    "mapsNote": "Map multipliers and per-legend map fit are first-pass defaults; tune them to taste."
+  },
+  "scoring": {
+    "coverageMax": 80,
+    "synergyMax": 20,
+    "pairMax": 2,
+    "coveredAt": 2,
+    "backup": 0.15,
+    "stackedAt": 4,
+    "maxPerLegend": 2,
+    "comfortBonus": 3,
+    "mapMax": 10
+  },
+  "classes": {
+    "assault": {
+      "label": "Assault",
+      "perks": [
+        {
+          "name": "Battle Surge",
+          "effect": "Breaking an enemy's shield boosts sprint and reload speed.",
+          "tags": {
+            "engage": 1
+          }
+        },
+        {
+          "name": "Combat Reserve",
+          "effect": "Carry extra ammo and ordnance."
+        },
+        {
+          "name": "Stowed Reload",
+          "effect": "Stowed weapons reload automatically after a short delay."
+        }
+      ]
+    },
+    "skirmisher": {
+      "label": "Skirmisher",
+      "perks": [
+        {
+          "name": "Trailblazer",
+          "effect": "Allies get a speed boost when running toward you from long distances.",
+          "tags": {
+            "rotate": 1
+          }
+        },
+        {
+          "name": "Care Package Insight",
+          "effect": "Reveals a care package's contents, including its best item."
+        },
+        {
+          "name": "Charged Knock",
+          "effect": "Restores health and shields on a knock."
+        }
+      ]
+    },
+    "recon": {
+      "label": "Recon",
+      "perks": [
+        {
+          "name": "Survey Beacons",
+          "effect": "Scanning a Survey Beacon briefly reveals nearby enemy positions.",
+          "tags": {
+            "intel": 1
+          }
+        },
+        {
+          "name": "Threat Vision",
+          "effect": "Threat vision while aiming down sights."
+        }
+      ]
+    },
+    "support": {
+      "label": "Support",
+      "perks": [
+        {
+          "name": "Revive Expert",
+          "effect": "Faster revives (not D.O.C.), revives provide health regen. Banner crafting & ally deathboxes spawn Mobile Respawn Beacon",
+          "tags": {
+            "revive": 1
+          }
+        }
+      ]
+    },
+    "controller": {
+      "label": "Controller",
+      "perks": [
+        {
+          "name": "Ring Consoles",
+          "effect": "Reveals the next ring; activating one again lets you call an EVAC.",
+          "tags": {
+            "rotate": 1
+          }
+        },
+        {
+          "name": "Reinforce Hardlight",
+          "effect": "Reinforce or rebuild Hardlight meshes to fortify an area.",
+          "tags": {
+            "hold": 1
+          }
+        },
+        {
+          "name": "Zone Overcharge",
+          "effect": "+25 shield capacity and slow shield regen while inside the safe zone."
+        }
+      ]
+    }
+  },
+  "plans": {
+    "badger": {
+      "label": "Badger",
+      "core": [
+        "hold",
+        "zone"
+      ],
+      "support": [
+        "sustain",
+        "cover"
+      ],
+      "tolerates": [
+        "mobility",
+        "engage",
+        "rotate",
+        "breach"
+      ],
+      "roles": [
+        "anchor",
+        "anchor",
+        "secondary"
+      ]
+    },
+    "ram": {
+      "label": "Ram",
+      "core": [
+        "breach",
+        "zone"
+      ],
+      "support": [
+        "damage",
+        "engage"
+      ],
+      "tolerates": [
+        "intel",
+        "disengage",
+        "mobility"
+      ],
+      "roles": [
+        "entry",
+        "secondary",
+        "secondary"
+      ]
+    },
+    "hawk": {
+      "label": "Hawk",
+      "core": [
+        "engage",
+        "mobility",
+        "rotate"
+      ],
+      "support": [
+        "disengage",
+        "damage"
+      ],
+      "tolerates": [
+        "hold",
+        "cover",
+        "breach",
+        "intel"
+      ],
+      "roles": [
+        "entry",
+        "entry",
+        "secondary"
+      ]
+    },
+    "spider": {
+      "label": "Spider",
+      "core": [
+        "cover",
+        "intel"
+      ],
+      "support": [
+        "sustain",
+        "damage",
+        "zone"
+      ],
+      "tolerates": [
+        "rotate",
+        "mobility",
+        "breach"
+      ],
+      "roles": [
+        "anchor",
+        "secondary",
+        "secondary"
+      ]
+    },
+    "wolf": {
+      "label": "Wolf",
+      "core": [
+        "intel",
+        "engage",
+        "rotate"
+      ],
+      "support": [
+        "disengage"
+      ],
+      "tolerates": [
+        "hold",
+        "cover",
+        "breach"
+      ],
+      "roles": [
+        "entry",
+        "secondary",
+        "secondary"
+      ]
+    },
+    "fox": {
+      "label": "Fox",
+      "core": [
+        "rotate",
+        "disengage",
+        "intel"
+      ],
+      "support": [
+        "mobility",
+        "revive"
+      ],
+      "tolerates": [
+        "engage",
+        "damage",
+        "breach",
+        "hold"
+      ],
+      "roles": [
+        "secondary",
+        "secondary",
+        "anchor"
+      ]
+    }
+  },
+  "tags": {
+    "rotate": {
+      "label": "Team rotation",
+      "weight": 3,
+      "missing": "Nothing to move the whole squad. Rotate early and mindfully or you'll be caught by the ring or third parties.",
+      "style": "mobile",
+      "strong": "Moves as one, so it can rotate early and choose where fights happen."
+    },
+    "intel": {
+      "label": "Intel",
+      "weight": 3,
+      "missing": "No recon. You'll be guessing where enemies are, so play off audio and pings.",
+      "style": "info-led",
+      "strong": "Plenty of recon: you should know where teams are before you commit."
+    },
+    "engage": {
+      "label": "Engage",
+      "weight": 2,
+      "missing": "No tool to start fights. You'll rely on raw gunplay & positioning to take good trades.",
+      "style": "aggressive",
+      "strong": "Has the tools to start fights on your own terms and punish mistakes fast."
+    },
+    "disengage": {
+      "label": "Disengage",
+      "weight": 2,
+      "missing": "No way out of a bad fight. Commit carefully and don't over-peek.",
+      "style": "slippery",
+      "strong": "Can back out of a bad fight instead of dying in it."
+    },
+    "zone": {
+      "label": "Zone control",
+      "weight": 2,
+      "missing": "Can't deny open ground. Pushes across open space will be hard to stop.",
+      "style": "controlling",
+      "strong": "Can deny open ground and split up a push."
+    },
+    "hold": {
+      "label": "Building lockdown",
+      "weight": 2,
+      "missing": "Can't fortify a building. Late-game holds will rely on gunplay & well-timed repositioning.",
+      "style": "defensive",
+      "strong": "Can lock down a building and make it miserable to push."
+    },
+    "sustain": {
+      "label": "Sustain",
+      "weight": 2,
+      "missing": "No team heals or shields. Long fights favour the other team.",
+      "style": "attritional",
+      "strong": "Out-heals the other team when fights drag on."
+    },
+    "cover": {
+      "label": "Deployable cover",
+      "weight": 1,
+      "missing": "No on-demand cover. Open ground in endgame is dangerous.",
+      "style": "fortified",
+      "strong": "Brings its own cover for open endgames."
+    },
+    "revive": {
+      "label": "Safe revives",
+      "weight": 1,
+      "missing": "No protected or quick revives. A knock is often a lost player.",
+      "style": "resilient",
+      "strong": "A knock doesn't have to be a death: revives can more easily be played around."
+    },
+    "damage": {
+      "label": "Ability damage",
+      "weight": 1,
+      "missing": "Little ability damage. Poke with grenades to soften teams.",
+      "style": "poke-heavy",
+      "strong": "Chips teams down with abilities before the guns come out."
+    },
+    "mobility": {
+      "label": "Personal mobility",
+      "weight": 0,
+      "missing": "No personal mobility, foresight & positioning is crucial for all members"
+    },
+    "breach": {
+      "label": "Breach",
+      "weight": 1.5,
+      "missing": "No way to crack a fortified building. Bunkered teams in endgame will be hard to dislodge.",
+      "style": "aggressive",
+      "strong": "Can crack a fortified building and force a team out."
+    }
+  },
+  "maps": {
+    "kings-canyon": {
+      "name": "Kings Canyon",
+      "blurb": "Mid-sized, with lots of choke points and tight interiors.",
+      "weights": {
+        "engage": 1.25,
+        "zone": 1.25,
+        "hold": 1.25,
+        "breach": 1.25
+      }
+    },
+    "worlds-edge": {
+      "name": "World's Edge",
+      "blurb": "A mix of wide open stretches and dense towns; rotations are long.",
+      "weights": {
+        "rotate": 1.25,
+        "intel": 1.25
+      }
+    },
+    "olympus": {
+      "name": "Olympus",
+      "blurb": "Open, with long sightlines and exposed endgames.",
+      "weights": {
+        "rotate": 1.25,
+        "cover": 1.5,
+        "intel": 1.25,
+        "hold": 0.75,
+        "breach": 0.75
+      }
+    },
+    "storm-point": {
+      "name": "Storm Point",
+      "blurb": "The largest map. Steep hills, long rotations and long-range fights.",
+      "weights": {
+        "rotate": 1.5,
+        "intel": 1.25,
+        "hold": 0.75
+      },
+      "breach": 0.75
+    },
+    "broken-moon": {
+      "name": "Broken Moon",
+      "blurb": "Large craters linked by zip rails. Open spaces punctuated by open buildings",
+      "weights": {
+        "rotate": 0.75,
+        "cover": 1.5,
+        "zone": 1.25
+      }
+    },
+    "e-district": {
+      "name": "E-District",
+      "blurb": "Dense city with tall buildings: vertical, close-range and littered with cover.",
+      "weights": {
+        "hold": 1.5,
+        "engage": 1.25,
+        "intel": 1.25,
+        "rotate": 0.75,
+        "cover": 0.75,
+        "breach": 1.5
+      }
+    }
+  },
+  "comps": [
+    {
+      "legends": [
+        "valkyrie",
+        "wattson",
+        "gibraltar"
+      ],
+      "label": "ALGS",
+      "note": "Year 6 Split 2 staple."
+    }
+  ],
+  "legends": [
+    {
+      "id": "bangalore",
+      "name": "Bangalore",
+      "class": "assault",
+      "kit": {
+        "passive": "Double Time: speed boost when shot at while sprinting.",
+        "tactical": "Smoke Launcher: canister that forms a smoke wall.",
+        "ultimate": "Rolling Thunder: creeping artillery strike."
+      },
+      "tags": {
+        "disengage": 2,
+        "zone": 1,
+        "cover": 1,
+        "damage": 1,
+        "mobility": 1
+      },
+      "maps": {
+        "olympus": 1,
+        "broken-moon": 1
+      },
+      "strengths": [
+        "Smoke wins revives, resets and crossings over open ground.",
+        "Ult forces teams out of cover and breaks up pushes."
+      ],
+      "weaknesses": [
+        "Smoke blinds your own team too.",
+        "No team movement or intel.",
+        "Ult can wreck your own push."
+      ],
+      "notes": "",
+      "upgrades": {
+        "2": [
+          {
+            "name": "Electric Smoke",
+            "effect": "Smoke acts as an EMP: deals 100dmg to enemy tacticals and damages ultimates.",
+            "tags": {
+              "engage": 1,
+              "breach": 1
+            },
+            "mode": "algs"
+          },
+          {
+            "name": "Cover Me",
+            "effect": "Allies heal inside your smoke; enemies who trigger Double Time get pinged.",
+            "tags": {
+              "sustain": 1,
+              "intel": 1
+            },
+            "must": true,
+            "mode": "ranked"
+          }
+        ],
+        "3": [
+          {
+            "name": "ECM Payload",
+            "effect": "Rolling Thunder hits harder (+10dmg) and destroys enemy deployables.",
+            "tags": {
+              "damage": 1,
+              "engage": 1
+            },
+            "mode": "algs"
+          },
+          {
+            "name": "Medal of Honor",
+            "effect": "Faster revives; Double Time triggers when running to downed allies.",
+            "tags": {
+              "revive": 1,
+              "mobility": 1
+            },
+            "must": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "fuse",
+      "name": "Fuse",
+      "class": "assault",
+      "kit": {
+        "passive": "Grenadier: extra grenades per slot; throws are faster and further.",
+        "tactical": "Knuckle Cluster: cluster bomb of airburst explosives.",
+        "ultimate": "Piercing shot that sprays smaller explosives where it lands. Alternate fire breaches buildings"
+      },
+      "tags": {
+        "damage": 2,
+        "zone": 1,
+        "engage": 1,
+        "breach": 2
+      },
+      "maps": {},
+      "strengths": [
+        "Constant ability poke softens teams before a push.",
+        "Great at flushing campers out of cover.",
+        "New rocketjump is awesome"
+      ],
+      "weaknesses": [
+        "Tac damage is attritional, not bursty - it needs follow-up."
+      ],
+      "notes": "",
+      "upgrades": {
+        "2": [
+          {
+            "name": "Pyro Techniques",
+            "effect": "Ultimate leaves fire patches behind for 8s after the bombs go off (doubled radius in 30.1).",
+            "tags": {
+              "zone": 1
+            }
+          },
+          {
+            "name": "Reignition",
+            "effect": "Explosive damage recharges your ultimate (1s per 3 damage)."
+          }
+        ],
+        "3": [
+          {
+            "name": "Big Bang",
+            "effect": "Knuckle Cluster explosions cover 50% more area.",
+            "tags": {
+              "damage": 1
+            }
+          },
+          {
+            "name": "Sticky Bomb",
+            "effect": "Knuckle Cluster projectile is 25% bigger and sticks to enemies; every 7 hits cut its cooldown by 1s.",
+            "tags": {
+              "damage": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "ash",
+      "name": "Ash",
+      "class": "assault",
+      "kit": {
+        "passive": "A dash.",
+        "tactical": "Arc Snare: spinning snare that tethers the nearest enemy.",
+        "ultimate": "Phase Breach: one-way portal to a targeted spot."
+      },
+      "tags": {
+        "engage": 2,
+        "rotate": 1,
+        "intel": 1,
+        "disengage": 1,
+        "mobility": 1
+      },
+      "maps": {},
+      "strengths": [
+        "Lots of opportunity to outplay with dash",
+        "Death box info leads you straight to weakened fights.",
+        "Snare plus portal is a strong dive."
+      ],
+      "weaknesses": [
+        "Portal is one-way, so a bad dive can't be undone.",
+        "Little to offer when holding position."
+      ],
+      "notes": "",
+      "upgrades": {
+        "2": [
+          {
+            "name": "Longer Reach",
+            "effect": "Increases Phase Breach range by 25m.",
+            "tags": {
+              "rotate": 1
+            },
+            "must": true
+          },
+          {
+            "name": "Ultimate Cooldown",
+            "effect": "Reduces Phase Breach cooldown by 30s.",
+            "tags": {
+              "intel": 1
+            }
+          }
+        ],
+        "3": [
+          {
+            "name": "Greedy Snare",
+            "effect": "Arc Snare can catch multiple enemies and lasts much longer.",
+            "tags": {
+              "zone": 1
+            }
+          },
+          {
+            "name": "Twin Snares",
+            "effect": "+1 Arc Snare charge.",
+            "tags": {
+              "engage": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "maggie",
+      "name": "Mad Maggie",
+      "class": "assault",
+      "kit": {
+        "passive": "Highlights damaged enemies; moves faster with a shotgun out.",
+        "tactical": "Riot Drill: burns through obstacles at enemies behind cover.",
+        "ultimate": "Wrecking Ball: drops speed pads and detonates near enemies."
+      },
+      "tags": {
+        "engage": 2,
+        "damage": 1,
+        "intel": 1,
+        "mobility": 1,
+        "breach": 2
+      },
+      "maps": {
+        "e-district": 1
+      },
+      "strengths": [
+        "Drill denies cover, including Gibby domes and doors.",
+        "Wrecking Ball gives the whole team speed for a push."
+      ],
+      "weaknesses": [
+        "Very little defensive utility.",
+        "Wants close range, so she struggles in long-range fights."
+      ],
+      "notes": "",
+      "upgrades": {
+        "2": [
+          {
+            "name": "Fire Ball",
+            "effect": "Wrecking Ball catches fire and explodes in thermite.",
+            "tags": {
+              "zone": 1,
+              "damage": 1
+            }
+          },
+          {
+            "name": "Gunrunning",
+            "effect": "Your passive move speed applies to SMGs and Pistols too."
+          }
+        ],
+        "3": [
+          {
+            "name": "Big Drill",
+            "effect": "Riot Drill is 50% deeper and wider.",
+            "tags": {
+              "damage": 1
+            }
+          },
+          {
+            "name": "Drillslinger",
+            "effect": "Extra Riot Drill charge, 25% shorter duration.",
+            "tags": {
+              "engage": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "ballistic",
+      "name": "Ballistic",
+      "class": "assault",
+      "kit": {
+        "passive": "The Sling: stores a third weapon.",
+        "tactical": "Whistler: overheats an enemy's gun if they keep firing.",
+        "ultimate": "Tempest: nearby allies get speed, faster reloads and infinite ammo."
+      },
+      "tags": {
+        "engage": 2,
+        "damage": 1
+      },
+      "maps": {},
+      "strengths": [
+        "Tempest is a strong team-wide push buff.",
+        "A third gun covers every range."
+      ],
+      "weaknesses": [
+        "No escape or team movement.",
+        "Whistler is easy to play around once spotted."
+      ],
+      "notes": "",
+      "upgrades": {
+        "2": [
+          {
+            "name": "Extra Bullet",
+            "effect": "+1 Whistler charge (three total).",
+            "tags": {
+              "engage": 1
+            },
+            "unplayable": true
+          },
+          {
+            "name": "Trap Mode",
+            "effect": "Trap will deal more damage and last longer",
+            "tags": {
+              "engage": 1
+            },
+            "unplayable": true
+          }
+        ],
+        "3": [
+          {
+            "name": "Quiet Time",
+            "effect": "Will no longer cause gun to overheat, will Silence instead. Longer cooldown",
+            "tags": {
+              "zone": 1
+            },
+            "unplayable": true
+          },
+          {
+            "name": "Killing Time",
+            "effect": "+15s Tempest duration.",
+            "unplayable": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "caustic",
+      "name": "Caustic",
+      "class": "controller",
+      "kit": {
+        "passive": "Fortified + Nox Vision: sees enemies inside his gas.",
+        "tactical": "Nox Gas Trap: canisters that release gas.",
+        "ultimate": "Nox Gas Grenade: blankets a large area in gas."
+      },
+      "tags": {
+        "zone": 1,
+        "damage": 1,
+        "intel": 1,
+        "hold": 2
+      },
+      "maps": {
+        "e-district": 1,
+        "kings-canyon": 1,
+        "olympus": -1,
+        "storm-point": -1
+      },
+      "strengths": [
+        "Holds a building like nothing else.",
+        "Gas slows pushes and reveals enemies to him."
+      ],
+      "weaknesses": [
+        "Slow. You need to rotate early.",
+        "Weak in the open with nothing to anchor traps to."
+      ],
+      "notes": "",
+      "upgrades": {
+        "2": [
+          {
+            "name": "Extra Traps",
+            "effect": "+2 traps in the world and +1 tactical charge.",
+            "tags": {
+              "hold": 1
+            }
+          },
+          {
+            "name": "Breathe It In",
+            "effect": "Regenerate health inside Nox gas.",
+            "tags": {
+              "sustain": 1
+            }
+          }
+        ],
+        "3": [
+          {
+            "name": "Gas Fighter",
+            "effect": "Tactical recharges much faster inside Nox gas.",
+            "tags": {
+              "zone": 1
+            }
+          },
+          {
+            "name": "Particle Diffuser",
+            "effect": "Larger ultimate gas cloud.",
+            "tags": {
+              "zone": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "wattson",
+      "name": "Wattson",
+      "class": "controller",
+      "kit": {
+        "passive": "Ultimate Accelerants fully charge her ultimate.",
+        "tactical": "Perimeter Security: electrified fences between nodes.",
+        "ultimate": "Interception Pylon: destroys ordnance and repairs shields."
+      },
+      "tags": {
+        "zone": 1,
+        "sustain": 1,
+        "cover": 1,
+        "hold": 2
+      },
+      "maps": {
+        "e-district": 1,
+        "kings-canyon": 1,
+        "olympus": -1,
+        "storm-point": -1
+      },
+      "strengths": [
+        "Pylon shuts down grenade spam and Gibby/Fuse ults.",
+        "Fences control choke points for a long time."
+      ],
+      "weaknesses": [
+        "Needs setup time.",
+        "No mobility."
+      ],
+      "notes": "",
+      "upgrades": {
+        "2": [
+          {
+            "name": "Help Is Here",
+            "effect": "Faster revives, and death boxes contain a Mobile Respawn Beacon.",
+            "tags": {
+              "revive": 1
+            }
+          },
+          {
+            "name": "Ultimate Conductor",
+            "effect": "Damage reduces ultimate cooldown; knocks give 50%."
+          }
+        ],
+        "3": [
+          {
+            "name": "Power Pylon",
+            "effect": "Double Ultimate's HP, max capacity, and shield recharge rate",
+            "tags": {
+              "sustain": 1
+            },
+            "must": true
+          },
+          {
+            "name": "Energised Healer",
+            "effect": "Syringes and Shield Cells heal double."
+          }
+        ]
+      }
+    },
+    {
+      "id": "rampart",
+      "name": "Rampart",
+      "class": "controller",
+      "kit": {
+        "passive": "Bigger mags and faster reloads with LMGs and the Minigun.",
+        "tactical": "Amped Cover: crouch wall that powers up into full cover.",
+        "ultimate": "Sheila: mounted minigun anyone can use."
+      },
+      "tags": {
+        "cover": 2,
+        "zone": 1,
+        "revive": 1,
+        "damage": 1,
+        "hold": 1
+      },
+      "maps": {
+        "olympus": 1,
+        "broken-moon": 1
+      },
+      "strengths": [
+        "Instant cover in open endgame circles.",
+        "Amped walls win long-range trades."
+      ],
+      "weaknesses": [
+        "Walls break easily early in the match.",
+        "No escape."
+      ],
+      "notes": "",
+      "upgrades": {
+        "2": [
+          {
+            "name": "Combat Reserve",
+            "effect": "Larger ammo stacks, extra grenade slots and stowed reloads."
+          },
+          {
+            "name": "Locked and Loaded",
+            "effect": "Faster reloads and infinite ammo while behind intact Amped Shields.",
+            "tags": {
+              "zone": 1
+            },
+            "must": true
+          }
+        ],
+        "3": [
+          {
+            "name": "Ramped Up",
+            "effect": "Better Sheila handling and spin-up by 20%.",
+            "tags": {
+              "damage": 1
+            }
+          },
+          {
+            "name": "Rebuild Module",
+            "effect": "Amped Cover regenerates and rebuilds it's Amped Shield after a while without damage.",
+            "tags": {
+              "cover": 1
+            },
+            "must": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "catalyst",
+      "name": "Catalyst",
+      "class": "controller",
+      "kit": {
+        "passive": "Barricade: reinforces up to four doors.",
+        "tactical": "Piercing Spikes: ferrofluid patch that spikes near enemies.",
+        "ultimate": "Dark Veil: wall that slows and blinds enemies who pass through it."
+      },
+      "tags": {
+        "zone": 2,
+        "disengage": 2,
+        "cover": 1,
+        "hold": 2
+      },
+      "maps": {
+        "e-district": 1,
+        "kings-canyon": 1
+      },
+      "strengths": [
+        "Veil splits teams and buys time to reset or rotate.",
+        "Reinforced doors make buildings very safe."
+      ],
+      "weaknesses": [
+        "Little damage or engage.",
+        "Veil can block your own push."
+      ],
+      "notes": "",
+      "upgrades": {
+        "2": [
+          {
+            "name": "Resilient Veil",
+            "effect": "Dark Veil lasts longer (+5s); ultimate cooldown 150s to 120s.",
+            "tags": {
+              "disengage": 1
+            }
+          },
+          {
+            "name": "Ferro-Door",
+            "effect": "Rebuilds and reinforces missing doors; up to 6 reinforced doors.",
+            "tags": {
+              "hold": 1
+            },
+            "must": true
+          }
+        ],
+        "3": [
+          {
+            "name": "Hidden Spikes",
+            "effect": "Spike pools are hidden from enemies until they activate.",
+            "tags": {
+              "zone": 1
+            },
+            "must": true
+          },
+          {
+            "name": "Ferro-Frenzy",
+            "effect": "+1 max spikes; spikes are 50% smaller but tick faster.",
+            "tags": {
+              "zone": 1
+            },
+            "unplayable": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "bloodhound",
+      "name": "Bloodhound",
+      "class": "recon",
+      "kit": {
+        "passive": "Tracker: sees enemy footprints; look at ravens to reveal nearby enemies.",
+        "tactical": "Eye of the Allfather: forward scan that reveals enemies.",
+        "ultimate": "Allfather's Cloak: dome device that cloaks anyone inside."
+      },
+      "tags": {
+        "intel": 2,
+        "engage": 1,
+        "disengage": 1,
+        "revive": 1
+      },
+      "maps": {},
+      "strengths": [
+        "Regular scans tell the team exactly when to push.",
+        "Cloak dome lets you revive or reposition hidden."
+      ],
+      "weaknesses": [
+        "Cloak hides enemies inside too.",
+        "No team movement."
+      ],
+      "notes": "",
+      "upgrades": {
+        "2": [
+          {
+            "name": "Hidden Sight",
+            "effect": "Using your ultimate refreshes your tactical; scans while cloaked are hidden from enemies.",
+            "tags": {
+              "intel": 1
+            }
+          },
+          {
+            "name": "Bird's Eye",
+            "effect": "White Ravens mark an extra enemy from another squad.",
+            "tags": {
+              "intel": 1
+            }
+          }
+        ],
+        "3": [
+          {
+            "name": "True Predator",
+            "effect": "Shooting briefly interrupts the cloak instead of breaking it.",
+            "tags": {
+              "engage": 1
+            }
+          },
+          {
+            "name": "Hunter's Agility",
+            "effect": "Tactical is faster to use and has a 5s shorter cooldown.",
+            "tags": {
+              "intel": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "crypto",
+      "name": "Crypto",
+      "class": "recon",
+      "kit": {
+        "passive": "Neurolink: marks enemies his drone spots within 30m.",
+        "tactical": "Surveillance Drone: aerial view.",
+        "ultimate": "Drone EMP: shield damage, slow and disables traps."
+      },
+      "tags": {
+        "intel": 2,
+        "engage": 2,
+        "damage": 1,
+        "zone": 1,
+        "revive": 2,
+        "breach": 1
+      },
+      "maps": {
+        "e-district": 1,
+        "storm-point": 1,
+        "worlds-edge": 1,
+        "olympus": 1
+      },
+      "strengths": [
+        "Safe, steady intel from a distance.",
+        "EMP is a strong opener and clears Wattson/Caustic setups, helpful when breaching."
+      ],
+      "weaknesses": [
+        "Vulnerable while flying the drone.",
+        "No movement for the team."
+      ],
+      "notes": "",
+      "upgrades": {
+        "2": [
+          {
+            "name": "Network Expansion",
+            "effect": "+25% passive and ultimate range.",
+            "tags": {
+              "intel": 1
+            }
+          },
+          {
+            "name": "Ally.MoveTo()",
+            "effect": "Crypto gets the Trailblazer passive from all allies."
+          }
+        ],
+        "3": [
+          {
+            "name": "Power Coupling",
+            "effect": "Gain ult charge from using Survey Beacons and scanning enemies with drone.",
+            "tags": {
+              "intel": 1
+            }
+          },
+          {
+            "name": "Hackathon",
+            "effect": "Drone recharges twice as fast; Crypto gains a speed boost when it's destroyed."
+          }
+        ]
+      }
+    },
+    {
+      "id": "valkyrie",
+      "name": "Valkyrie",
+      "class": "recon",
+      "kit": {
+        "passive": "VTOL Jets: jetpack flight with refilling fuel.",
+        "tactical": "Missile Swarm: mini-rockets that stun.",
+        "ultimate": "Skyward Dive: skydive launch that allies can join."
+      },
+      "tags": {
+        "rotate": 2,
+        "disengage": 2,
+        "mobility": 2,
+        "intel": 1,
+        "engage": 1,
+        "damage": 1
+      },
+      "maps": {
+        "storm-point": 1,
+        "worlds-edge": 1,
+        "olympus": 1
+      },
+      "strengths": [
+        "Best long-distance team rotation in the game.",
+        "Ult doubles as an escape and as a scan of the area."
+      ],
+      "weaknesses": [
+        "Ult landing spot is predictable and easy to punish.",
+        "Big target while flying."
+      ],
+      "notes": "",
+      "upgrades": {
+        "2": [
+          {
+            "name": "Eyes in the Sky",
+            "effect": "Reveals enemies while skydiving (through walls up to 100m, line of sight to 250m).",
+            "tags": {
+              "intel": 1
+            }
+          },
+          {
+            "name": "Full Coverage",
+            "effect": "Missile Swarm becomes a 4x5 pattern.",
+            "tags": {
+              "zone": 1
+            }
+          }
+        ],
+        "3": [
+          {
+            "name": "Supersonic",
+            "effect": "Skyward Dive launch time reduced by 40%.",
+            "tags": {
+              "disengage": 1
+            },
+            "must": true
+          },
+          {
+            "name": "Aerial Expert",
+            "effect": "Decreased jetpack activation cost, increased horizontal speed. Consumes fuel slightly faster",
+            "unplayable": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "seer",
+      "name": "Seer",
+      "class": "recon",
+      "kit": {
+        "passive": "Heart Seeker: hears and sees nearby heartbeats while aiming down sights.",
+        "tactical": "Focus of Attention: micro-drones that reveal enemies through walls.",
+        "ultimate": "Exhibit: sphere that reveals enemies who move fast or fire."
+      },
+      "tags": {
+        "intel": 2,
+        "engage": 2,
+        "zone": 1
+      },
+      "maps": {
+        "e-district": 1
+      },
+      "strengths": [
+        "Instant intel before and during a fight.",
+        "Exhibit makes enemy revives and heals very risky."
+      ],
+      "weaknesses": [
+        "No mobility or escape.",
+        "Weaker when the fight is chaotic and spread out."
+      ],
+      "notes": "",
+      "upgrades": {
+        "2": [
+          {
+            "name": "Energizing Focus",
+            "effect": "Regenerate shields when your tactical hits enemies.",
+            "tags": {
+              "sustain": 1
+            }
+          },
+          {
+            "name": "Lasting Beats",
+            "effect": "Ult shows enemies for 5s after leaving the Ult AoE."
+          }
+        ],
+        "3": [
+          {
+            "name": "Home Base",
+            "effect": "Tactical cooldown is 8s while inside your ultimate.",
+            "tags": {
+              "intel": 1
+            }
+          },
+          {
+            "name": "Split Focus",
+            "effect": "+1 tactical charge.",
+            "tags": {
+              "intel": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "vantage",
+      "name": "Vantage",
+      "class": "recon",
+      "kit": {
+        "passive": "Spotter's Lens: scouting through her eyepiece; tracking teams charges her ult.",
+        "tactical": "Echo Relocation: launches her toward her bat, Echo.",
+        "ultimate": "Sniper's Mark: mark that gives the team a damage bonus."
+      },
+      "tags": {
+        "intel": 2,
+        "damage": 2,
+        "mobility": 1,
+        "engage": 1
+      },
+      "maps": {
+        "olympus": 1,
+        "broken-moon": 1,
+        "storm-point": 1,
+        "e-district": -1
+      },
+      "mapNotes": {
+        "e-district": "Tall buildings and clutter break up her sightlines.",
+        "olympus": "Open sightlines suit her scouting and sniping.",
+        "broken-moon": "Open craters give her long, clear lines."
+      },
+      "strengths": [
+        "Long-range info and damage.",
+        "Good at punishing teams that are rotating."
+      ],
+      "weaknesses": [
+        "Echo only moves her, not the team.",
+        "Weak up close."
+      ],
+      "notes": "",
+      "upgrades": {
+        "2": [
+          {
+            "name": "Controlling My Prey",
+            "effect": "Ring Console access, and gain Controller shield passive."
+          },
+          {
+            "name": "Improved Mark",
+            "effect": "Sniper's Mark is visible through walls, applying mark briefly highlights enemy and reveals healthbars to them",
+            "tags": {
+              "intel": 1
+            },
+            "must": true
+          }
+        ],
+        "3": [
+          {
+            "name": "Herd Tracker",
+            "effect": "Pinging an enemy tracks their whole team.",
+            "tags": {
+              "intel": 1
+            },
+            "must": true
+          },
+          {
+            "name": "Sniper Cover",
+            "effect": "Adds a gun shield to the sniper ultimate.",
+            "tags": {
+              "cover": 1
+            },
+            "unplayable": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "sparrow",
+      "name": "Sparrow",
+      "class": "recon",
+      "kit": {
+        "passive": "Double jump, or launch up a wall.",
+        "tactical": "Tracker dart that reveals enemies in its line of sight.",
+        "ultimate": "Arrow that releases six damaging blasts and slows everyone nearby."
+      },
+      "tags": {
+        "intel": 2,
+        "mobility": 2,
+        "zone": 1,
+        "damage": 1,
+        "engage": 1,
+        "disengage": 1
+      },
+      "maps": {
+        "e-district": 1
+      },
+      "strengths": [
+        "Intel without giving up personal mobility.",
+        "Ult denies an area and slows pushes."
+      ],
+      "weaknesses": [
+        "Mobility is just for him.",
+        "Ult slows your own team too."
+      ],
+      "notes": "",
+      "upgrades": {
+        "2": [
+          {
+            "name": "Hunt Target",
+            "effect": "Speed boost when running toward a marked enemy.",
+            "tags": {
+              "engage": 1
+            }
+          },
+          {
+            "name": "Extra Traps",
+            "effect": "+1 tactical charge and +2 darts in the world.",
+            "tags": {
+              "intel": 1
+            }
+          }
+        ],
+        "3": [
+          {
+            "name": "Life Siphon",
+            "effect": "Recover health and shields when your ultimate damages enemies.",
+            "tags": {
+              "sustain": 1
+            }
+          },
+          {
+            "name": "Alternate Mode",
+            "effect": "Ultimate gets 3 charges with fewer pulses in a smaller radius.",
+            "tags": {
+              "zone": 1
+            },
+            "must": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "octane",
+      "name": "Octane",
+      "class": "skirmisher",
+      "kit": {
+        "passive": "Swift Mend: automatic health regen.",
+        "tactical": "Stim: faster movement at a health cost.",
+        "ultimate": "Launch Pad: jump pad that launches teammates."
+      },
+      "tags": {
+        "mobility": 2,
+        "rotate": 1,
+        "engage": 1,
+        "disengage": 1
+      },
+      "maps": {},
+      "strengths": [
+        "Pad is a fast team push or escape.",
+        "Great at entry and grabbing third-party fights."
+      ],
+      "weaknesses": [
+        "Easy to run in too far ahead of the team.",
+        "Little utility once the fight starts."
+      ],
+      "notes": "",
+      "upgrades": {
+        "2": [
+          {
+            "name": "Thick Skin",
+            "effect": "Take 5 less Stim damage."
+          },
+          {
+            "name": "Squad Rush",
+            "effect": "Allies gain stim after landing from a jump pad.",
+            "tags": {
+              "rotate": 1
+            }
+          }
+        ],
+        "3": [
+          {
+            "name": "Triple Jump",
+            "effect": "Upgrades the Jump Pad to give 3 jumps."
+          },
+          {
+            "name": "Daredevil",
+            "effect": "Tac lasts longer the less health you have.",
+            "tags": {
+              "engage": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "pathfinder",
+      "name": "Pathfinder",
+      "class": "skirmisher",
+      "kit": {
+        "passive": "Insider Knowledge: scans survey beacons to reveal the next ring.",
+        "tactical": "Grappling Hook: two charges.",
+        "ultimate": "Zipline Gun: zipline everyone can use."
+      },
+      "tags": {
+        "rotate": 2,
+        "mobility": 2,
+        "disengage": 2,
+        "engage": 1
+      },
+      "maps": {
+        "storm-point": 1,
+        "e-district": 1
+      },
+      "strengths": [
+        "Zipline gets the team to height or out of trouble.",
+        "Grapple lets him reach any high ground."
+      ],
+      "weaknesses": [
+        "Ziplines are loud and visible.",
+        "No intel or defensive utility."
+      ],
+      "notes": "",
+      "upgrades": {
+        "2": [
+          {
+            "name": "Field Research",
+            "effect": "Gain access to Survey Beacons, gain threat vision when ADSing",
+            "tags": {
+              "intel": 1
+            }
+          },
+          {
+            "name": "Ringmaster",
+            "effect": "Access ring consoles, gain zone overchange and reinforce Hardlight"
+          }
+        ],
+        "3": [
+          {
+            "name": "Feeling Zippy",
+            "effect": "Second zipline charge; allies move faster on energized ziplines.",
+            "tags": {
+              "rotate": 1
+            },
+            "must": true
+          },
+          {
+            "name": "Landing Gear",
+            "effect": "Better air control and soft landings."
+          }
+        ]
+      }
+    },
+    {
+      "id": "wraith",
+      "name": "Wraith",
+      "class": "skirmisher",
+      "kit": {
+        "passive": "Voices from the Void: warns of danger.",
+        "tactical": "Into the Void: fast travel while immune to damage.",
+        "ultimate": "Dimensional Rift: portal between two points for 60s."
+      },
+      "tags": {
+        "rotate": 2,
+        "disengage": 2,
+        "mobility": 2,
+        "engage": 1,
+        "intel": 1
+      },
+      "maps": {},
+      "strengths": [
+        "Portal is a flexible rotation, escape or flank.",
+        "Void makes her very hard to finish off."
+      ],
+      "weaknesses": [
+        "Portal has to be planned ahead.",
+        "Enemies can follow you through it."
+      ],
+      "notes": "",
+      "upgrades": {
+        "2": [
+          {
+            "name": "Phase Dome",
+            "effect": "Players within a radius of the channeling portal will enter phase",
+            "tags": {
+              "rotate": 1
+            },
+            "must": true
+          },
+          {
+            "name": "Sixth Sense",
+            "effect": "Voices warn when squads approach.",
+            "tags": {
+              "intel": 1
+            }
+          }
+        ],
+        "3": [
+          {
+            "name": "Void Jumper",
+            "effect": "Gain double jump while in the Void and longer time in the Void.",
+            "must": true
+          },
+          {
+            "name": "Fast Phase",
+            "effect": "Faster Into the Void wind-up.",
+            "tags": {
+              "disengage": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "revenant",
+      "name": "Revenant",
+      "class": "skirmisher",
+      "kit": {
+        "passive": "Highlights nearby low-health enemies; faster crouch walk.",
+        "tactical": "Shadow Pounce: chargeable forward leap.",
+        "ultimate": "Forged Shadows: shroud that absorbs damage and regenerates."
+      },
+      "tags": {
+        "engage": 2,
+        "mobility": 2,
+        "intel": 1,
+        "disengage": 1
+      },
+      "maps": {
+        "e-district": 1,
+        "storm-point": -1
+      },
+      "strengths": [
+        "Pounce plus shadows is a fast dive onto weak players.",
+        "Good at finishing knocked players."
+      ],
+      "weaknesses": [
+        "Does almost nothing for the team as a whole.",
+        "A bad pounce leaves him exposed."
+      ],
+      "notes": "",
+      "upgrades": {
+        "2": [
+          {
+            "name": "Ultimate Cooldown",
+            "effect": "-30s Forged Shadows cooldown."
+          },
+          {
+            "name": "Try to Hide",
+            "effect": "Low-health enemies stay marked twice as long.",
+            "tags": {
+              "intel": 1
+            }
+          }
+        ],
+        "3": [
+          {
+            "name": "Tactical Cooldown",
+            "effect": "Reduced Shadow Pounce cooldown by 5s.",
+            "tags": {
+              "engage": 1
+            }
+          },
+          {
+            "name": "Agile Assassin",
+            "effect": "Shadow Pounce charges and fires 50% faster.",
+            "tags": {
+              "engage": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "horizon",
+      "name": "Horizon",
+      "class": "skirmisher",
+      "kit": {
+        "passive": "Spacewalk: better air control and less fall damage.",
+        "tactical": "Gravity Lift: lifts the team vertically.",
+        "ultimate": "Black Hole: pulls enemies together."
+      },
+      "tags": {
+        "mobility": 2,
+        "engage": 2,
+        "rotate": 1,
+        "zone": 1,
+        "disengage": 1,
+        "damage": 1
+      },
+      "maps": {
+        "e-district": 1,
+        "olympus": 1
+      },
+      "strengths": [
+        "Lift reaches height or gives a quick reset.",
+        "Black Hole groups enemies up for grenades and AoE."
+      ],
+      "weaknesses": [
+        "Players on the lift are an easy target.",
+        "Ult is much weaker without AoE damage to follow it up."
+      ],
+      "notes": "",
+      "upgrades": {
+        "2": [
+          {
+            "name": "Gravity Boots",
+            "effect": "Crouch in the air to fall much faster."
+          },
+          {
+            "name": "Newt Scoot",
+            "effect": "Jump after leaving Gravity Lift to glide.",
+            "tags": {
+              "disengage": 1
+            }
+          }
+        ],
+        "3": [
+          {
+            "name": "Conservation of Energy",
+            "effect": "Landing with Spacewalk restores 25 HP.",
+            "tags": {
+              "sustain": 1
+            }
+          },
+          {
+            "name": "Knock Expert",
+            "effect": "Gain a tactical charge on knocks.",
+            "tags": {
+              "engage": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "alter",
+      "name": "Alter",
+      "class": "skirmisher",
+      "kit": {
+        "passive": "Gift from the Rift: sees and takes items from death boxes through walls.",
+        "tactical": "Void Passage: portal through surfaces under 25m thick.",
+        "ultimate": "Void Nexus: point the squad can recall to."
+      },
+      "tags": {
+        "rotate": 2,
+        "disengage": 2,
+        "mobility": 1,
+        "engage": 1,
+        "breach": 1
+      },
+      "maps": {
+        "e-district": 1
+      },
+      "strengths": [
+        "Nexus is a guaranteed team escape.",
+        "Wall portals give surprise angles into or from buildings."
+      ],
+      "weaknesses": [
+        "Nexus has to be set up before the fight.",
+        "No intel or defensive utility."
+      ],
+      "notes": "",
+      "upgrades": {
+        "2": [
+          {
+            "name": "Eye to Another World",
+            "effect": "Survey Beacon access, threat vision while ADSing.",
+            "tags": {
+              "intel": 1
+            }
+          },
+          {
+            "name": "Controller of Worlds",
+            "effect": "Ring Console access, gain zone overcharge andcan reinforce Hardlight."
+          }
+        ],
+        "3": [
+          {
+            "name": "Staring into the Void",
+            "effect": "Longer scan through her portals (+15s).",
+            "tags": {
+              "intel": 1
+            }
+          },
+          {
+            "name": "Void Breacher",
+            "effect": "Better movement and weapon handling to her and her allies after using a portal.",
+            "tags": {
+              "engage": 1
+            },
+            "must": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "axle",
+      "name": "Axle",
+      "class": "skirmisher",
+      "kit": {
+        "passive": "Drift: more speed and control while sliding.",
+        "tactical": "Nitro Gate: gate that gives anyone high-speed slides.",
+        "ultimate": "Kickstart: enemy-seeking drone that launches targets into the air."
+      },
+      "tags": {
+        "mobility": 2,
+        "engage": 2,
+        "rotate": 1,
+        "disengage": 1,
+        "damage": 1
+      },
+      "maps": {
+        "storm-point": 1,
+        "olympus": 1
+      },
+      "strengths": [
+        "Nitro Gate speeds up the whole team.",
+        "Kickstart knocks enemies out of cover and out of position."
+      ],
+      "weaknesses": [
+        "Gate can become a fast lane for enemies.",
+        "No intel or sustain."
+      ],
+      "notes": "",
+      "upgrades": {
+        "2": [
+          {
+            "name": "Sliding Shooter",
+            "effect": "Shots fired while sliding are drawn from reserve ammo first.",
+            "tags": {
+              "damage": 1
+            }
+          },
+          {
+            "name": "Long Haul",
+            "effect": "+2s to Nitro Gate slide boost.",
+            "tags": {
+              "rotate": 1
+            }
+          }
+        ],
+        "3": [
+          {
+            "name": "Drone Deployer",
+            "effect": "Kickstart cooldown back down to 90s (-30s).",
+            "tags": {
+              "engage": 1
+            }
+          },
+          {
+            "name": "Super Slider",
+            "effect": "Reduced tactical cooldown; up to 3 active Nitro Gates.",
+            "tags": {
+              "rotate": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "gibraltar",
+      "name": "Gibraltar",
+      "class": "support",
+      "kit": {
+        "passive": "Fortified + Gun Shield: shield while aiming down sights.",
+        "tactical": "Dome of Protection: dome that blocks attacks.",
+        "ultimate": "Defensive Bombardment: mortar strike on a marked position."
+      },
+      "tags": {
+        "cover": 2,
+        "revive": 1,
+        "sustain": 1,
+        "zone": 1,
+        "damage": 1,
+        "engage": 1,
+        "disengage": 1,
+        "hold": 1
+      },
+      "maps": {
+        "olympus": 1,
+        "broken-moon": 1
+      },
+      "strengths": [
+        "Dome makes revives and heals safe.",
+        "Bombardment forces teams to move."
+      ],
+      "weaknesses": [
+        "Domes can trap your own team.",
+        "Big hitbox and no mobility."
+      ],
+      "notes": "",
+      "upgrades": {
+        "2": [
+          {
+            "name": "Thunder Dome",
+            "effect": "First enemy to enter the dome will take damage and EMP",
+            "tags": {
+              "zone": 1
+            },
+            "must": true
+          },
+          {
+            "name": "Dome Healing",
+            "effect": "Smell meds heal double for players while in the dome.",
+            "tags": {
+              "sustain": 1
+            }
+          }
+        ],
+        "3": [
+          {
+            "name": "Triple Bombardment",
+            "effect": "Ult has 3 charges with a smaller radius.",
+            "tags": {
+              "cover": 1
+            }
+          },
+          {
+            "name": "Fast Shotties",
+            "effect": "Move faster with Shotguns, auto-reload them on knocks.",
+            "tags": {
+              "revive": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "lifeline",
+      "name": "Lifeline",
+      "class": "support",
+      "kit": {
+        "passive": "D.O.C. revives teammates; also has Combat Glide.",
+        "tactical": "D.O.C. Heal Drone: heals nearby allies.",
+        "ultimate": "Halo Shield: blocks bullets and speeds up healing inside."
+      },
+      "tags": {
+        "sustain": 2,
+        "revive": 2,
+        "cover": 1,
+        "mobility": 1
+      },
+      "maps": {},
+      "strengths": [
+        "Best sustain in the game.",
+        "D.O.C. revives keep you shooting while a teammate gets up."
+      ],
+      "weaknesses": [
+        "Not much engage or damage.",
+        "No team movement."
+      ],
+      "notes": "",
+      "upgrades": {
+        "2": [
+          {
+            "name": "Extended Flight",
+            "effect": "1.5s extra Combat Glide.",
+            "tags": {
+              "disengage": 1
+            }
+          },
+          {
+            "name": "Battpack",
+            "effect": "+1 Shield Battery stack size, shield battery count shown on deathboxes",
+            "tags": {
+              "sustain": 1
+            }
+          }
+        ],
+        "3": [
+          {
+            "name": "Enhanced Radio",
+            "effect": "Longer D.O.C. assignment range by 50%.",
+            "tags": {
+              "revive": 1
+            }
+          },
+          {
+            "name": "Tactical Cooldown+",
+            "effect": "-10s heal drone cooldown.",
+            "tags": {
+              "sustain": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "mirage",
+      "name": "Mirage",
+      "class": "support",
+      "kit": {
+        "passive": "Cloaks automatically while using beacons or reviving.",
+        "tactical": "Psyche Out: holographic decoy.",
+        "ultimate": "Life of the Party: a team of decoys."
+      },
+      "tags": {
+        "disengage": 2,
+        "revive": 1,
+        "intel": 1
+      },
+      "maps": {},
+      "strengths": [
+        "Cloaked revives are hard to stop.",
+        "Decoys bait shots and reveal where enemies are."
+      ],
+      "weaknesses": [
+        "Decoys do nothing against experienced players.",
+        "Little hard utility."
+      ],
+      "notes": "",
+      "upgrades": {
+        "2": [
+          {
+            "name": "Renaissance Man",
+            "effect": "Survey Beacons, Ring Consoles, Munition Boxes and care package scans.",
+            "tags": {
+              "intel": 1
+            }
+          },
+          {
+            "name": "Boozle-Eye",
+            "effect": "Successful Bamboozles also highlight enemies.",
+            "tags": {
+              "intel": 1
+            }
+          }
+        ],
+        "3": [
+          {
+            "name": "Me Two",
+            "effect": "+1 decoy charge."
+          },
+          {
+            "name": "Bamboozle Bonus",
+            "effect": "Successful Bamboozles refresh the tactical."
+          }
+        ]
+      }
+    },
+    {
+      "id": "loba",
+      "name": "Loba",
+      "class": "support",
+      "kit": {
+        "passive": "Eye for Quality: sees epic and legendary loot through walls.",
+        "tactical": "Burglar's Best Friend: Jump Drive bracelet teleport.",
+        "ultimate": "Black Market Boutique: pulls nearby loot into your inventory."
+      },
+      "tags": {
+        "sustain": 1,
+        "mobility": 1,
+        "disengage": 1
+      },
+      "maps": {},
+      "strengths": [
+        "Black Market keeps the team stocked on heals, ammo and grenades.",
+        "Bracelet reaches height or escapes alone."
+      ],
+      "weaknesses": [
+        "Little direct impact on fights.",
+        "Bracelet only moves her."
+      ],
+      "notes": "",
+      "upgrades": {
+        "2": [
+          {
+            "name": "Wolf's Claws",
+            "effect": "Faster weapon draw and a speed boost after translocating.",
+            "tags": {
+              "engage": 1
+            }
+          },
+          {
+            "name": "Shopping Spree",
+            "effect": "Squad can take an extra item from Black Market.",
+            "tags": {
+              "sustain": 1
+            }
+          }
+        ],
+        "3": [
+          {
+            "name": "Escape Artist",
+            "effect": "Regenerate 25 shield after translocating.",
+            "tags": {
+              "disengage": 1
+            }
+          },
+          {
+            "name": "Brand New Bag",
+            "effect": "Gives the whole squad purple backpacks.",
+            "tags": {
+              "sustain": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "newcastle",
+      "name": "Newcastle",
+      "class": "support",
+      "kit": {
+        "passive": "Fortified + Retrieve the Wounded: drags downed allies behind a Revive Shield.",
+        "tactical": "Mobile Shield: controllable drone with a moving shield.",
+        "ultimate": "Castle Wall: leap that builds a fortified stronghold."
+      },
+      "tags": {
+        "revive": 2,
+        "cover": 2,
+        "zone": 1,
+        "engage": 1,
+        "disengage": 1,
+        "hold": 1
+      },
+      "maps": {
+        "olympus": 1,
+        "broken-moon": 1
+      },
+      "strengths": [
+        "Revives are safe even in the open.",
+        "Castle Wall gives instant cover, on a teammate or on enemies."
+      ],
+      "weaknesses": [
+        "Big and slow.",
+        "Mobile Shield is easy to shoot down."
+      ],
+      "notes": "",
+      "upgrades": {
+        "2": [
+          {
+            "name": "Stronghold",
+            "effect": "More Castle Wall health and longer energised duration.",
+            "tags": {
+              "cover": 1
+            }
+          },
+          {
+            "name": "Ready To Rumble",
+            "effect": "Reload all weapons and begin full regeneration after reviving allies.",
+            "tags": {
+              "sustain": 1
+            }
+          }
+        ],
+        "3": [
+          {
+            "name": "Ultimate Savior",
+            "effect": "Castle Wall slam gives allies in the impact area 15s of shield regen.",
+            "tags": {
+              "sustain": 1
+            }
+          },
+          {
+            "name": "Defensive Line",
+            "effect": "Tactical and Passive shields will repel the first enemy that comes near them.",
+            "tags": {
+              "cover": 1,
+              "disengage": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "conduit",
+      "name": "Conduit",
+      "class": "support",
+      "kit": {
+        "passive": "Savior's Speed: speed burst when running to a teammate out of tactical range.",
+        "tactical": "Radiant Transfer: gives a teammate temporary shields (two charges).",
+        "ultimate": "Energy Barricade: shield-jamming devices that damage and slow."
+      },
+      "tags": {
+        "sustain": 2,
+        "zone": 1,
+        "damage": 1,
+        "engage": 1,
+        "mobility": 1
+      },
+      "maps": {},
+      "strengths": [
+        "Instant shields mid-fight win close trades.",
+        "Ult zones off an area and drains enemy shields."
+      ],
+      "weaknesses": [
+        "Shields are temporary.",
+        "Shield transfer needs line of sight to the teammate."
+      ],
+      "notes": "",
+      "upgrades": {
+        "2": [
+          {
+            "name": "Concurrency",
+            "effect": "Fire Energy Barricade again within 10s at no cost; 2 fewer, tighter jammers.",
+            "tags": {
+              "zone": 1
+            }
+          },
+          {
+            "name": "Jammed Up",
+            "effect": "+25% jammer radius; enemies hit have their HUD jammed for 10s.",
+            "tags": {
+              "zone": 1
+            }
+          }
+        ],
+        "3": [
+          {
+            "name": "Instant Barrier",
+            "effect": "Part of Radiant Transfer's shield arrives instantly; regen lasts 2s less.",
+            "tags": {
+              "sustain": 1
+            }
+          },
+          {
+            "name": "Enduring Barrier",
+            "effect": "Radiant Transfer regen keeps going while taking damage (not ring damage).",
+            "tags": {
+              "sustain": 1
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "synergies": [
+    {
+      "pair": [
+        "horizon",
+        "fuse"
+      ],
+      "score": 2,
+      "note": "Black Hole groups enemies up for Knuckle Clusters and the ult."
+    },
+    {
+      "pair": [
+        "horizon",
+        "caustic"
+      ],
+      "score": 1,
+      "note": "Black Hole into a gas cloud. Nasty in buildings."
+    },
+    {
+      "pair": [
+        "horizon",
+        "gibraltar"
+      ],
+      "score": 1,
+      "note": "Pull a team together, then drop Bombardment on them."
+    },
+    {
+      "pair": [
+        "sparrow",
+        "horizon"
+      ],
+      "score": 1,
+      "note": "Combined ultimates can win a dense fight outright."
+    },
+    {
+      "pair": [
+        "valkyrie",
+        "catalyst"
+      ],
+      "score": 1,
+      "note": "Veil covers the launch, then Valk flies the team out. Fly to a building and lock it down."
+    },
+    {
+      "pair": [
+        "valkyrie",
+        "wattson"
+      ],
+      "score": 1,
+      "note": "Fly to a building and lock it down."
+    },
+    {
+      "pair": [
+        "valkyrie",
+        "caustic"
+      ],
+      "score": 1,
+      "note": "Fly to a building and lock it down."
+    },
+    {
+      "pair": [
+        "crypto",
+        "revenant"
+      ],
+      "score": 1,
+      "note": "EMP, then pounce onto players with cracked shields."
+    },
+    {
+      "pair": [
+        "crypto",
+        "wraith"
+      ],
+      "score": 2,
+      "note": "Drop Wraith portal near Crypto, Wraith takes space and enters the Void, Crypto EMPs, Wraith exits Void and opens portal, Crypto jumps through."
+    },
+    {
+      "pair": [
+        "crypto",
+        "lifeline"
+      ],
+      "score": -1,
+      "note": "Too much redundancy, not enough impact."
+    },
+    {
+      "pair": [
+        "seer",
+        "ash"
+      ],
+      "score": 2,
+      "note": "Seer finds the targets, Ash snares and portals onto them."
+    },
+    {
+      "pair": [
+        "ash",
+        "revenant"
+      ],
+      "score": 1,
+      "note": "Double dive. All in, all the time."
+    },
+    {
+      "pair": [
+        "ash",
+        "maggie"
+      ],
+      "score": 1,
+      "note": "Ash & Maggie tac combined make certain cover unplayable."
+    },
+    {
+      "pair": [
+        "wattson",
+        "alter"
+      ],
+      "score": 0,
+      "note": "Niche combo hence unscored: kidnap enemies into Wattson fences."
+    },
+    {
+      "pair": [
+        "caustic",
+        "wattson"
+      ],
+      "score": 1,
+      "note": "Unbreakable building hold, but needs a very early rotation."
+    },
+    {
+      "pair": [
+        "caustic",
+        "catalyst"
+      ],
+      "score": 1,
+      "note": "Busting your bunker hurts."
+    },
+    {
+      "pair": [
+        "catalyst",
+        "wattson"
+      ],
+      "score": 1,
+      "note": "Door reinforcement, fences and Pylon. Pushing requires extreme commitment."
+    },
+    {
+      "pair": [
+        "rampart",
+        "catalyst"
+      ],
+      "score": 1,
+      "note": "Amped walls behind a Veil let you trade from safety."
+    },
+    {
+      "pair": [
+        "wraith",
+        "bangalore"
+      ],
+      "score": 1,
+      "note": "Smoke covers the walk to the portal."
+    },
+    {
+      "pair": [
+        "wraith",
+        "wattson"
+      ],
+      "score": 1,
+      "note": "Kidnap into fences."
+    },
+    {
+      "pair": [
+        "wraith",
+        "newcastle"
+      ],
+      "score": 1,
+      "note": "Newcastle Ult onto your diving Wraith to divide a fight."
+    },
+    {
+      "pair": [
+        "maggie",
+        "octane"
+      ],
+      "score": 1,
+      "note": "Extreme engage, no cover is safe."
+    },
+    {
+      "pair": [
+        "bangalore",
+        "conduit"
+      ],
+      "score": 1,
+      "note": "HP from Bang tac and instant Shields from Conduit can swing close fights."
+    },
+    {
+      "pair": [
+        "bangalore",
+        "ash"
+      ],
+      "score": 0,
+      "note": "Smoke can cover portal escapes. Not overly powerful so unscored."
+    },
+    {
+      "pair": [
+        "bangalore",
+        "bloodhound"
+      ],
+      "score": 1,
+      "note": "Smoke to blind enemies, scan to hunt them down"
+    },
+    {
+      "pair": [
+        "bangalore",
+        "wattson"
+      ],
+      "score": 1,
+      "note": "Bangalore provides essential disengage if Wattson is caught in the open."
+    },
+    {
+      "pair": [
+        "bloodhound",
+        "axle"
+      ],
+      "score": 1,
+      "note": "Invisible, high-speed engage."
+    },
+    {
+      "pair": [
+        "mirage",
+        "loba"
+      ],
+      "score": -1,
+      "note": "Lots of comfort and not much fight impact."
+    },
+    {
+      "pair": [
+        "valkyrie",
+        "gibraltar"
+      ],
+      "score": 1,
+      "note": "Part of the 'Moving Fortress' comp."
+    },
+    {
+      "pair": [
+        "sparrow",
+        "octane"
+      ],
+      "score": 1,
+      "note": "Sparrow tac feeds info to hard engage legends, ult provides disruption."
+    },
+    {
+      "pair": [
+        "sparrow",
+        "pathfinder"
+      ],
+      "score": 1,
+      "note": "Sparrow tac feeds info to hard engage legends, ult provides disruption."
+    },
+    {
+      "pair": [
+        "sparrow",
+        "revenant"
+      ],
+      "score": 1,
+      "note": "Sparrow tac feeds info to hard engage legends, ult provides disruption."
+    },
+    {
+      "pair": [
+        "sparrow",
+        "axle"
+      ],
+      "score": 1,
+      "note": "Sparrow tac feeds info to hard engage legends, ult provides disruption."
+    },
+    {
+      "pair": [
+        "octane",
+        "gibraltar"
+      ],
+      "score": 0,
+      "note": "Fly at the enemy and bubble their face. Funny but not necessarily good, so unscored."
+    },
+    {
+      "pair": [
+        "alter",
+        "conduit"
+      ],
+      "score": 1,
+      "note": "Conduit shields enhance the attritional 'portal dancing' fights and Conduit res+shields allow quick resets from Alter Ult pulls."
+    },
+    {
+      "pair": [
+        "rampart",
+        "alter"
+      ],
+      "score": 1,
+      "note": "Teleport away from breaching teams and establish control & cover. Alter's Void Breacher perk enhances Shiela."
+    },
+    {
+      "pair": [
+        "ballistic",
+        "caustic"
+      ],
+      "score": -1,
+      "note": "Ballistic is unplayably bad, with anyone."
+    },
+    {
+      "pair": [
+        "ballistic",
+        "wattson"
+      ],
+      "score": -1,
+      "note": "Ballistic is unplayably bad, with anyone."
+    },
+    {
+      "pair": [
+        "ballistic",
+        "rampart"
+      ],
+      "score": -1,
+      "note": "Ballistic is unplayably bad, with anyone."
+    },
+    {
+      "pair": [
+        "ballistic",
+        "catalyst"
+      ],
+      "score": -1,
+      "note": "Ballistic is unplayably bad, with anyone."
+    },
+    {
+      "pair": [
+        "ballistic",
+        "bloodhound"
+      ],
+      "score": -1,
+      "note": "Ballistic is unplayably bad, with anyone."
+    },
+    {
+      "pair": [
+        "ballistic",
+        "crypto"
+      ],
+      "score": -1,
+      "note": "Ballistic is unplayably bad, with anyone."
+    },
+    {
+      "pair": [
+        "ballistic",
+        "valkyrie"
+      ],
+      "score": -1,
+      "note": "Ballistic is unplayably bad, with anyone."
+    },
+    {
+      "pair": [
+        "ballistic",
+        "seer"
+      ],
+      "score": -1,
+      "note": "Ballistic is unplayably bad, with anyone."
+    },
+    {
+      "pair": [
+        "ballistic",
+        "vantage"
+      ],
+      "score": -1,
+      "note": "Ballistic is unplayably bad, with anyone."
+    },
+    {
+      "pair": [
+        "ballistic",
+        "sparrow"
+      ],
+      "score": -1,
+      "note": "Ballistic is unplayably bad, with anyone."
+    },
+    {
+      "pair": [
+        "ballistic",
+        "octane"
+      ],
+      "score": -1,
+      "note": "Ballistic is unplayably bad, with anyone."
+    },
+    {
+      "pair": [
+        "ballistic",
+        "pathfinder"
+      ],
+      "score": -1,
+      "note": "Ballistic is unplayably bad, with anyone."
+    },
+    {
+      "pair": [
+        "ballistic",
+        "wraith"
+      ],
+      "score": -1,
+      "note": "Ballistic is unplayably bad, with anyone."
+    },
+    {
+      "pair": [
+        "ballistic",
+        "revenant"
+      ],
+      "score": -1,
+      "note": "Ballistic is unplayably bad, with anyone."
+    },
+    {
+      "pair": [
+        "ballistic",
+        "horizon"
+      ],
+      "score": -1,
+      "note": "Ballistic is unplayably bad, with anyone."
+    },
+    {
+      "pair": [
+        "ballistic",
+        "alter"
+      ],
+      "score": -1,
+      "note": "Ballistic is unplayably bad, with anyone."
+    },
+    {
+      "pair": [
+        "ballistic",
+        "axle"
+      ],
+      "score": -1,
+      "note": "Ballistic is unplayably bad, with anyone."
+    },
+    {
+      "pair": [
+        "ballistic",
+        "gibraltar"
+      ],
+      "score": -1,
+      "note": "Ballistic is unplayably bad, with anyone."
+    },
+    {
+      "pair": [
+        "ballistic",
+        "lifeline"
+      ],
+      "score": -1,
+      "note": "Ballistic is unplayably bad, with anyone."
+    },
+    {
+      "pair": [
+        "ballistic",
+        "mirage"
+      ],
+      "score": -1,
+      "note": "Ballistic is unplayably bad, with anyone."
+    },
+    {
+      "pair": [
+        "ballistic",
+        "loba"
+      ],
+      "score": -1,
+      "note": "Ballistic is unplayably bad, with anyone."
+    },
+    {
+      "pair": [
+        "ballistic",
+        "newcastle"
+      ],
+      "score": -1,
+      "note": "Ballistic is unplayably bad, with anyone."
+    },
+    {
+      "pair": [
+        "ballistic",
+        "conduit"
+      ],
+      "score": -1,
+      "note": "Ballistic is unplayably bad, with anyone."
+    }
+  ]
+}

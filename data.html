@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en-GB" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data · Team Comp · Apex Legends</title>
+  <meta name="description" content="Every rating behind the Apex Legends Team Comp Analyser, charted so you can check it.">
+  <link rel="preload" href="fonts/roboto-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/comp.css">
+  <link rel="stylesheet" href="css/data.css">
+  <script>document.documentElement.classList.replace('no-js', 'js');</script>
+</head>
+<body>
+  <main class="wrap">
+
+    <header class="about">
+      <p class="label">apex legends · tools</p>
+      <h1 class="hero-name">Team Comp Data</h1>
+      <p class="lead">Every rating the <a href="./">Team Comp Analyser</a> uses, straight from the files in <code>data/</code>. Skim the charts, and if something looks wrong, say so: that's the point of this page.</p>
+      <p class="meta"><strong>What the score means:</strong> how well these players can carry out the comp's plan, and how well the comp covers what the game throws at you, given no comp covers everything. It's tuned for ranked. A plan's "punishes" and "risks" are advice: they aren't scored, because the tool can't know what's in your lobby.</p>
+      <p class="meta" id="data-meta"></p>
+      <p class="meta" id="data-status"></p>
+      <nav class="dv-nav" id="dv-nav" aria-label="Sections"></nav>
+    </header>
+
+    <div id="dv" class="dv"></div>
+
+    <footer class="footer">
+      <span class="eof">-- EOF --</span>
+      <div class="footer-links">
+        <a href="./">analyser</a>
+        <a href="solo.html">solo queue</a>
+        <a href="https://rwnmk.github.io/">rwnmk.github.io</a>
+        <a href="https://github.com/rwnmk/apex-comp-analyser" class="icon-link"><i class="fa fa-brands fa-github" aria-hidden="true"></i>source</a>
+      </div>
+    </footer>
+
+  </main>
+
+  <noscript><p class="wrap t-err">This page needs JavaScript.</p></noscript>
+  <script type="module" src="js/dataview.js"></script>
+</body>
+</html>

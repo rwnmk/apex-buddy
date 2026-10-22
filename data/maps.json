@@ -1,0 +1,62 @@
+{
+  "maps": {
+    "kings-canyon": {
+      "name": "Kings Canyon",
+      "blurb": "Mid-sized, with lots of choke points and tight interiors.",
+      "weights": {"engage": 1.25, "zone": 1.25, "hold": 1.25, "breach": 1.25}
+    },
+    "worlds-edge": {
+      "name": "World's Edge",
+      "blurb": "A mix of wide open stretches and dense towns; rotations are long.",
+      "weights": {"rotate": 1.25, "intel": 1.25}
+    },
+    "olympus": {
+      "name": "Olympus",
+      "blurb": "Open, with long sightlines and exposed endgames.",
+      "weights": {"rotate": 1.25, "cover": 1.5, "intel": 1.25, "hold": 0.75, "breach": 0.75}
+    },
+    "storm-point": {
+      "name": "Storm Point",
+      "blurb": "The largest map. Steep hills, long rotations and long-range fights.",
+      "weights": {"rotate": 1.5, "intel": 1.25, "hold": 0.75},
+      "breach": 0.75
+    },
+    "broken-moon": {
+      "name": "Broken Moon",
+      "blurb": "Large craters linked by zip rails. Open spaces punctuated by open buildings",
+      "weights": {"rotate": 0.75, "cover": 1.5, "zone": 1.25}
+    },
+    "e-district": {
+      "name": "E-District",
+      "blurb": "Dense city with tall buildings: vertical, close-range and littered with cover.",
+      "weights": {"hold": 1.5, "engage": 1.25, "intel": 1.25, "rotate": 0.75, "cover": 0.75, "breach": 1.5}
+    }
+  },
+  "fit": {
+    "bangalore": {"olympus": 1, "broken-moon": 1},
+    "maggie": {"e-district": 1},
+    "alter": {"e-district": 1},
+    "axle": {"storm-point": 1, "olympus": 1},
+    "horizon": {"e-district": 1, "olympus": 1},
+    "pathfinder": {"storm-point": 1, "e-district": 1},
+    "revenant": {"e-district": 1, "storm-point": -1},
+    "crypto": {"e-district": 1, "storm-point": 1, "worlds-edge": 1, "olympus": 1},
+    "seer": {"e-district": 1},
+    "sparrow": {"e-district": 1},
+    "valkyrie": {"storm-point": 1, "worlds-edge": 1, "olympus": 1},
+    "vantage": {"olympus": 1, "broken-moon": 1, "storm-point": 1, "e-district": -1},
+    "gibraltar": {"olympus": 1, "broken-moon": 1},
+    "newcastle": {"olympus": 1, "broken-moon": 1},
+    "catalyst": {"e-district": 1, "kings-canyon": 1},
+    "caustic": {"e-district": 1, "kings-canyon": 1, "olympus": -1, "storm-point": -1},
+    "rampart": {"olympus": 1, "broken-moon": 1},
+    "wattson": {"e-district": 1, "kings-canyon": 1, "olympus": -1, "storm-point": -1}
+  },
+  "notes": {
+    "vantage": {
+      "e-district": "Tall buildings and clutter break up her sightlines.",
+      "olympus": "Open sightlines suit her scouting and sniping.",
+      "broken-moon": "Open craters give her long, clear lines."
+    }
+  }
+}

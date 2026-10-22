@@ -1,0 +1,52 @@
+{
+  "meta": {
+    "season": "Season 30",
+    "updated": "2026-10-18",
+    "upgradesChecked": "Season 30 (30.1 mid-season patch). Not all upgrades have been reviewed yet (2026-10-19)",
+    "classesChecked": "Class perks per the EA forums class-perk overview (Sept 2026).",
+    "mapsNote": "Map multipliers and per-legend map fit are first-pass defaults; tune them to taste."
+  },
+  "codeOrder": [
+    "bangalore",
+    "fuse",
+    "ash",
+    "maggie",
+    "ballistic",
+    "caustic",
+    "wattson",
+    "rampart",
+    "catalyst",
+    "bloodhound",
+    "crypto",
+    "valkyrie",
+    "seer",
+    "vantage",
+    "sparrow",
+    "octane",
+    "pathfinder",
+    "wraith",
+    "revenant",
+    "horizon",
+    "alter",
+    "axle",
+    "gibraltar",
+    "lifeline",
+    "mirage",
+    "loba",
+    "newcastle",
+    "conduit"
+  ],
+  "files": {
+    "kits": "kits.json",
+    "upgrades": "upgrades.json",
+    "traits": "traits.csv",
+    "roles": "roles.csv",
+    "tags": "tags.json",
+    "maps": "maps.json",
+    "synergies": "synergies.json",
+    "plans": "plans.json",
+    "comps": "comps.json",
+    "scoring": "scoring.json",
+    "popularity": "popularity.json"
+  }
+}

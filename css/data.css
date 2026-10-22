@@ -1,0 +1,77 @@
+/* Data viewer (data.html) */
+.dv { display: flex; flex-direction: column; gap: 64px; }
+.dv-section { scroll-margin-top: 24px; }
+.dv-stack { display: flex; flex-direction: column; gap: 14px; }
+.dv-nav { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 8px; font-size: 14px; }
+.dv-nav a::before { content: "#"; color: var(--faint); }
+
+.dv-controls { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+.dv-segs { display: inline-flex; gap: 6px; }
+.dv-key { display: flex; flex-wrap: wrap; gap: 4px 10px; font-size: 12px; }
+.dv-key button { display: inline-flex; align-items: center; gap: 6px; padding: 2px 6px; border: 1px solid transparent; background: transparent; color: var(--muted); font: inherit; cursor: pointer; }
+.dv-key button:hover, .dv-key button[aria-pressed="true"] { border-color: var(--line); color: var(--fg); }
+.dv-key i { width: 10px; height: 10px; display: inline-block; }
+
+.dv-chart { width: 100%; overflow-x: auto; }
+.dv-towers { width: 100%; min-width: 720px; height: auto; display: block; }
+.dv-grid { stroke: var(--line); stroke-width: 1; }
+.dv-tick { font-family: var(--mono); font-size: 11px; fill: var(--muted); }
+
+.dv-scroll { width: 100%; overflow-x: auto; }
+.dv-table { border-collapse: collapse; font-size: 12px; }
+.dv-table th, .dv-table td { padding: 4px 6px; border-bottom: 1px solid var(--line); text-align: center; white-space: nowrap; }
+.dv-table thead th { color: var(--muted); font-weight: 400; vertical-align: bottom; }
+.dv-table tbody th { text-align: left; font-weight: 600; color: var(--white); }
+.dv-table td { min-width: 26px; color: var(--white); }
+.dv-vert { writing-mode: vertical-rl; transform: rotate(180deg); display: inline-block; }
+.dv-sub { color: var(--muted); font-weight: 400; }
+.dv-total { color: var(--muted); }
+.dv-noted { text-decoration: underline dotted; cursor: help; }
+
+.dv-roles td { min-width: 120px; text-align: left; }
+.dv-bar { display: inline-block; width: 80px; height: 8px; background: var(--surface-2); vertical-align: middle; margin-right: 8px; }
+.dv-bar i { display: block; height: 100%; }
+.dv-num { color: var(--muted); }
+.dv-best { color: var(--accent-tint); text-align: left; }
+
+.dv-matrix td { min-width: 22px; padding: 2px 3px; font-size: 11px; }
+.dv-matrix td[title] { cursor: help; }
+.dv-self { background: var(--surface-2); }
+.dv-pairs { display: flex; flex-direction: column; gap: 6px; margin-top: 10px; font-size: 13px; }
+.dv-pairs strong { color: var(--white); }
+.dv-score { display: inline-block; min-width: 28px; font-weight: 700; color: var(--muted); }
+.dv-score.pos { color: var(--trim); }
+.dv-score.neg { color: var(--err); }
+
+.dv-details summary { cursor: pointer; color: var(--trim); padding: 4px 0; }
+.dv-details[open] summary { margin-bottom: 8px; }
+
+.dv-plans { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+.dv-plan { display: flex; flex-direction: column; gap: 8px; padding: 14px 16px; }
+.dv-plan h3 { color: var(--white); font-size: 18px; }
+.dv-note { color: var(--fg); }
+.dv-dl { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 12px; font-size: 13px; }
+.dv-dl dt { color: var(--muted); }
+.dv-chip { display: inline-block; margin: 0 4px 4px 0; padding: 0 6px; border: 1px solid var(--line); font-size: 12px; }
+.dv-chip.core { color: var(--white); border-width: 2px; }
+.dv-chip.tol { color: var(--muted); border-style: dashed; }
+
+.dv-ups td { text-align: left; white-space: normal; min-width: 220px; vertical-align: top; }
+.dv-ups tbody th { vertical-align: top; }
+.dv-up-name { display: block; color: var(--white); font-weight: 600; }
+.dv-up-name .badge { margin-left: 6px; }
+.dv-up-effect { display: block; color: var(--fg); }
+.dv-up-tags { display: block; color: var(--trim); }
+
+.dv-list td, .dv-list th { text-align: left; white-space: normal; }
+.dv-dot { display: inline-block; width: 10px; height: 10px; margin-right: 8px; }
+.dv-perks { display: flex; flex-direction: column; gap: 6px; font-size: 13px; }
+.dv-settings { word-spacing: 2px; }
+
+/* suggest-a-change links (open a pre-filled GitHub issue) */
+.dv-suggest { font-size: 12px; white-space: nowrap; }
+.dv-table .dv-suggest, .dv-plan h3 .dv-suggest, .dv-pairs .dv-suggest, .dv-guide .dv-suggest { opacity: .6; }
+.dv-suggest:hover, .dv-suggest:focus-visible { opacity: 1; }
+.dv-guide { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px 24px; margin-top: 6px; }
+.dv-guide h4 { color: var(--white); font-size: 14px; margin-bottom: 6px; display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
+.dv-guide .dv-dl { font-size: 12px; }
