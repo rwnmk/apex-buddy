@@ -1,12 +1,23 @@
 # apex-buddy
 
-Tell it who's playing, what you want from the squad and which map you're on. It suggests Apex Legends comps that fit, then breaks down whichever one you pick. It's a static page with no build step.
+Apex Legends tools for a group that plays together, served by GitHub Pages at https://rwnmk.github.io/apex-buddy/. It's a static site with no build step.
+
+| Path | Page |
+|---|---|
+| `/` (`index.html`) | Home: links to each tool. Old links with an analyser or solo hash (from before the tools moved into folders) are forwarded to the right page. |
+| `/comp/` | Team Comp Analyser: tell it who's playing, what you want from the squad and which map you're on; it suggests comps that fit, then breaks down whichever one you pick. |
+| `/solo/` | Solo Queue Picker (see below). |
+| `/rp-calc/` | RP calculator. For now this redirects to https://rwnmk.github.io/apex-rp-calculator/ until it's moved in. |
+| `/omgwhy/` | OMGWHY. For now this redirects to the personal site's page until it's moved in. |
+| `/data.html` | The data viewer for the comp tools. |
+
+`solo.html` is a redirect stub for links made before the move. Every page loads `js/nav.js`, which adds the shared nav bar (and its stylesheet, `css/nav.css`), so a page needs only that one script tag. `js/source.js` finds `data/` relative to itself, so pages in any folder load the same data.
 
 ## Setup
 
 1. Copy the site fonts into `fonts/`. `css/main.css` expects `fonts/roboto-mono-latin-{400,600,700}-normal.woff2` and `fonts/fa-{brands,solid}-subset.woff2`.
 2. If the site's `main.css` changes, copy the new version over `css/main.css`. Page styles live in `css/comp.css` and only use the tokens from `main.css`.
-3. To run it locally, use `python3 -m http.server`, then open http://localhost:8000. The page fetches its JSON, so opening `index.html` directly from disk won't work (nor would the ES modules).
+3. To run it locally, use `python3 -m http.server`, then open http://localhost:8000. The pages fetch their JSON, so opening the HTML files directly from disk won't work (nor would the ES modules).
 
 ## Code layout
 
@@ -23,9 +34,10 @@ Tell it who's playing, what you want from the squad and which map you're on. It 
 | `links.js` | Share links, player codes and saved settings. |
 | `actions.js` | Things the UI can do to state. |
 | `render.js` | One function per page block. |
+| `nav.js` | The shared nav bar on every page; links are relative to the site root, and the current tool is marked. |
 | `dataview.js` | The data viewer (`data.html`): charts every rating in the data for checking. Read-only. |
 | `solo.js` | The solo-queue model: picks for one player given the teammates' legends, exact or popularity-weighted. No DOM. |
-| `soloview.js` | The solo-queue page (`solo.html`): loading, its link and storage, rendering. |
+| `soloview.js` | The solo-queue page (`solo/`): loading, its link and storage, rendering. |
 
 ## Data viewer
 
@@ -33,7 +45,7 @@ Tell it who's playing, what you want from the squad and which map you're on. It 
 
 ## Solo queue
 
-`solo.html` is for when you queue alone. Choose who you are (from the analyser's player library, or a pasted player code), the map, where you are in the pick order (1st, 2nd or 3rd), and whatever your teammates have picked. A teammate who picks before you has locked in; one who picks after you can only be hovering. It shows the three best picks for you and five runners-up.
+`solo/` is for when you queue alone. Choose who you are (from the analyser's player library, or a pasted player code), the map, where you are in the pick order (1st, 2nd or 3rd), and whatever your teammates have picked. A teammate who picks before you has locked in; one who picks after you can only be hovering. It shows the three best picks for you and five runners-up.
 
 - **Both teammates known** (locked or hovering): each legend you play is scored with the two of them. Exact, the same score the analyser would give that comp.
 - **One or neither known:** the teammates still to pick are assumed to choose from what's left in proportion to `popularity.json`, so each option shows its **expected** score, plus its best case ("best with Gibraltar + Wattson: 71").

@@ -1,0 +1,11 @@
+/* Apex Buddy site nav (added by js/nav.js) */
+.wrap > .site-nav { margin: -40px 0 -40px; }   /* sit close to the top and to the page header, inside .wrap's large gaps */
+.site-nav { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 20px; padding-bottom: 10px; border-bottom: 1px solid var(--line); font-size: 13px; }
+.site-nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 16px; }
+.site-nav a { color: var(--muted); }
+.site-nav a:hover { color: var(--fg); text-decoration: none; }
+.site-nav a[aria-current="page"] { color: var(--trim); }
+.site-nav ul a::before { content: "/"; color: var(--faint); }
+.site-nav-home { font-weight: 600; letter-spacing: .04em; }
+.site-nav-home::before { content: "λ "; color: var(--trim); }
+@media (max-width: 560px) { .wrap > .site-nav { margin: -28px 0 -32px; } }

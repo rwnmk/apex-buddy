@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en-GB" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Team Comp · Apex Legends</title>
+  <meta name="description" content="Tell it who's playing, what you want and which map, and get Apex Legends team comps that fit your squad.">
+  <link rel="preload" href="../fonts/roboto-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/comp.css">
+  <script>document.documentElement.classList.replace('no-js', 'js');</script>
+</head>
+<body>
+  <main class="wrap">
+
+    <header class="about">
+      <p class="label">apex legends · tools</p>
+      <h1 class="hero-name">Team Comp Analyser</h1>
+      <p class="lead">Input or paste in your group's picks, tick who's playing, then select a map and finetune by the traits you're after. Pick from the generated comps to review the breakdown, notes and perk suggestions.</p>
+      <p class="meta">The score is how well your players can carry out the comp's plan and cover what the game throws at you. Tuned for ranked; a plan's "punishes" and "risks" are advice, not scored.</p>
+      <p class="meta"><a href="../solo/">Queuing alone? Try the solo queue picker</a></p>
+      <p class="meta"><a href="../data.html">See all the data behind it</a></p>
+      <p class="meta" id="data-meta"></p>
+    </header>
+
+    <!-- 1. players -->
+    <section class="section" aria-labelledby="players-h">
+      <div class="cmd-head">
+        <h2 id="players-h"><span class="lambda">λ</span> squad --players</h2>
+        <div class="head-actions">
+          <button type="button" class="btn-term btn-sm" id="btn-roster-reset">reset picks</button>
+        </div>
+      </div>
+      <p class="meta">Edit the names to match your party, and mark who plays what. Suggestions only use comps where each legend goes to a different player who plays it, and favour comfort picks.</p>
+      <div class="roster-names" id="roster-names"></div>
+      <details class="roster-details">
+        <summary>edit picks per legend</summary>
+        <p class="meta">Click a cell to cycle: · can play → ★ comfort pick → × doesn't play. Saved in this browser, and in the share link.</p>
+        <div class="roster-scroll">
+          <table class="roster-table" id="roster-table"></table>
+        </div>
+      </details>
+    </section>
+
+    <!-- 2. tune -->
+    <section class="section" aria-labelledby="tune-h">
+      <div class="cmd-head">
+        <h2 id="tune-h"><span class="lambda">λ</span> squad --tune</h2>
+        <div class="head-actions">
+          <button type="button" class="btn-term btn-sm" id="btn-tune-reset">reset</button>
+        </div>
+      </div>
+
+      <div class="stack-sm">
+        <h3 class="label">map</h3>
+        <div class="tags" id="map-chips" role="group" aria-label="Map"></div>
+        <p class="meta" id="map-blurb"></p>
+      </div>
+
+      <div class="stack-sm">
+        <h3 class="label">priorities</h3>
+        <p class="meta">Raise what you want the squad to be good at and lower what you don't care about.</p>
+        <div class="tune-grid" id="tune-grid"></div>
+      </div>
+
+      <details class="lock-details" id="lock-details">
+        <summary>lock legends <span class="meta" id="lock-summary"></span></summary>
+        <p class="meta">Optional. Locked legends are in every suggestion. Lock all three to just analyse that comp.</p>
+        <ol class="slots" id="slots" aria-label="Locked legends"></ol>
+        <div class="filters">
+          <div class="tags" id="class-filters" role="group" aria-label="Filter by class"></div>
+          <div class="head-actions">
+            <label class="search">
+              <span class="lambda" aria-hidden="true">›</span>
+              <span class="visually-hidden">Search legends</span>
+              <input type="search" id="search" placeholder="search" autocomplete="off" spellcheck="false">
+            </label>
+            <button type="button" class="btn-term btn-sm" id="btn-clear">clear</button>
+          </div>
+        </div>
+        <div class="picker" id="picker"></div>
+      </details>
+    </section>
+
+    <!-- 3. generate -->
+    <section class="section" aria-labelledby="gen-h">
+      <div class="cmd-head">
+        <h2 id="gen-h"><span class="lambda">λ</span> squad --generate</h2>
+      </div>
+      <button type="button" class="btn-term btn-go" id="btn-generate">generate</button>
+      <pre class="gen-log" id="gen-log" aria-live="polite"></pre>
+      <div id="results"></div>
+    </section>
+
+    <!-- 4. breakdown -->
+    <section class="section" aria-labelledby="analyse-h">
+      <div class="cmd-head">
+        <h2 id="analyse-h"><span class="lambda">λ</span> comp --analyse</h2>
+        <div class="head-actions">
+          <span class="meta" id="comp-label"></span>
+          <button type="button" class="btn-term btn-sm" id="btn-share" aria-describedby="share-status">copy link</button>
+        </div>
+      </div>
+      <p class="visually-hidden" id="share-status" aria-live="polite"></p>
+      <p class="visually-hidden" id="score-status" aria-live="polite"></p>
+      <div id="analysis"></div>
+    </section>
+
+    <footer class="footer">
+      <span class="eof">-- EOF --</span>
+      <div class="footer-links">
+        <a href="https://rwnmk.github.io/">rwnmk.github.io</a>
+        <a href="https://github.com/rwnmk/apex-buddy" class="icon-link"><i class="fa fa-brands fa-github" aria-hidden="true"></i>source</a>
+      </div>
+    </footer>
+
+  </main>
+
+  <noscript><p class="wrap t-err">This tool needs JavaScript.</p></noscript>
+  <script type="module" src="../js/nav.js"></script>
+  <script type="module" src="../js/app.js"></script>
+</body>
+</html>

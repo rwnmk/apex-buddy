@@ -17,7 +17,7 @@
     <header class="about">
       <p class="label">apex legends · tools</p>
       <h1 class="hero-name">Team Comp Data</h1>
-      <p class="lead">Every rating the <a href="./">Team Comp Analyser</a> uses, straight from the files in <code>data/</code>. Skim the charts, and if something looks wrong, say so: that's the point of this page.</p>
+      <p class="lead">Every rating the <a href="comp/">Team Comp Analyser</a> and <a href="solo/">solo queue picker</a> use, straight from the files in <code>data/</code>. Skim the charts, and if something looks wrong, say so: that's the point of this page.</p>
       <p class="meta"><strong>What the score means:</strong> how well these players can carry out the comp's plan, and how well the comp covers what the game throws at you, given no comp covers everything. It's tuned for ranked. A plan's "punishes" and "risks" are advice: they aren't scored, because the tool can't know what's in your lobby.</p>
       <p class="meta" id="data-meta"></p>
       <p class="meta" id="data-status"></p>
@@ -29,8 +29,9 @@
     <footer class="footer">
       <span class="eof">-- EOF --</span>
       <div class="footer-links">
-        <a href="./">analyser</a>
-        <a href="solo.html">solo queue</a>
+        <a href="./">apex buddy</a>
+        <a href="comp/">analyser</a>
+        <a href="solo/">solo queue</a>
         <a href="https://rwnmk.github.io/">rwnmk.github.io</a>
         <a href="https://github.com/rwnmk/apex-buddy" class="icon-link"><i class="fa fa-brands fa-github" aria-hidden="true"></i>source</a>
       </div>
@@ -39,6 +40,7 @@
   </main>
 
   <noscript><p class="wrap t-err">This page needs JavaScript.</p></noscript>
+  <script type="module" src="js/nav.js"></script>
   <script type="module" src="js/dataview.js"></script>
 </body>
 </html>

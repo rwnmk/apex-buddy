@@ -215,7 +215,7 @@ function card(x, n, exact) {
       const drop = x.score - s.score;
       return el('p', { class: `spick-switch${drop >= 5 ? ' risky' : ''}` }, `if ${nameOf(s.id)} switches: about ${s.score.toFixed(1)}`, drop >= 5 ? ` (−${drop.toFixed(1)})` : '');
     }),
-    el('a', { class: 'spick-link', href: './#' + analyserHash(comp), target: '_blank', rel: 'noopener', text: exact ? 'breakdown ›' : 'breakdown of the best case ›' }));
+    el('a', { class: 'spick-link', href: '../comp/#' + analyserHash(comp), target: '_blank', rel: 'noopener', text: exact ? 'breakdown ›' : 'breakdown of the best case ›' }));
 }
 
 /* An expected pick's plan depends on who completes the comp, so its card shows the plan on the

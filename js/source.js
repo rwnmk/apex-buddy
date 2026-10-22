@@ -10,9 +10,11 @@
    the files themselves (parse errors, unknown legends or columns); validate(d) checks the content. */
 
 export const DATA_DIR = 'data/';
+// data/ sits beside js/, so pages in subfolders (comp/, solo/) find it too
+const DATA_URL = new URL('../' + DATA_DIR, import.meta.url);
 
 export const fetchText = async (path) => {
-  const res = await fetch(DATA_DIR + path, { cache: 'no-cache' });
+  const res = await fetch(new URL(path, DATA_URL), { cache: 'no-cache' });
   if (res.status === 404) return null;
   if (!res.ok) throw new Error(`HTTP ${res.status} fetching ${DATA_DIR}${path}`);
   return res.text();
