@@ -1,4 +1,4 @@
-# apex-comp-analyser
+# apex-buddy
 
 Tell it who's playing, what you want from the squad and which map you're on. It suggests Apex Legends comps that fit, then breaks down whichever one you pick. It's a static page with no build step.
 
@@ -33,15 +33,15 @@ Tell it who's playing, what you want from the squad and which map you're on. It 
 
 ## Solo queue
 
-`solo.html` is for when you queue alone. Choose who you are (from the analyser's player library, or a pasted player code), the map, and whatever your teammates have hovered or locked. It shows the three best picks for you and five runners-up.
+`solo.html` is for when you queue alone. Choose who you are (from the analyser's player library, or a pasted player code), the map, where you are in the pick order (1st, 2nd or 3rd), and whatever your teammates have picked. A teammate who picks before you has locked in; one who picks after you can only be hovering. It shows the three best picks for you and five runners-up.
 
-- **Picking third** (both teammates known): each legend you play is scored with the two of them. Exact, the same score the analyser would give that comp.
-- **Picking second or first:** the teammates still to pick are assumed to choose from what's left in proportion to `popularity.json`, so each option shows its **expected** score, plus its best case ("best with Gibraltar + Wattson: 71").
+- **Both teammates known** (locked or hovering): each legend you play is scored with the two of them. Exact, the same score the analyser would give that comp.
+- **One or neither known:** the teammates still to pick are assumed to choose from what's left in proportion to `popularity.json`, so each option shows its **expected** score, plus its best case ("best with Gibraltar + Wattson: 71").
 - **Ranking** is the score plus `comfortBonus` for a ★ pick and `roleBonus` × how much you like the role the legend plays, as in the analyser's seating. Your × legends are never suggested.
-- **Hovers:** mark a teammate's pick as a hover, and each suggestion also shows its expected score if they switch. A drop of 5 or more is shown in red.
+- **Hovers:** a teammate after you who's hovering a legend is treated as picking it, and each suggestion also shows its expected score if they switch. A drop of 5 or more is shown in red.
 - **Plans** are annotated, not chosen: a comp's score is already the better of its generalist and best-plan scores. Each card links to the analyser's breakdown (for an expected pick, of its best case).
 
-It reads the player library but never writes it. It remembers you and the map under `apex-team-comp.solo.v1`; teammates live only in the link: `#y=Rowan~28~CD3qSmyq.123&m=olympus&a=wraith:h,bangalore` (`y` you as a player code, `m` map, `a` teammates, `:h` = hovering). A blind pick scores all 3,276 comps the first time (about 2 s, with progress); everything after that is cached until the map changes.
+It reads the player library but never writes it. It remembers you and the map under `apex-team-comp.solo.v1`; the pick order and teammates live only in the link: `#y=Rowan~28~CD3qSmyq.123&m=olympus&p=2&a=wraith,bangalore` (`y` you as a player code, `m` map, `p` your place in the pick order, `a` the teammates' legends in pick order, `-` for one not entered yet). Older links without `p=` put you after everyone listed. A blind pick scores all 3,276 comps the first time (about 2 s, with progress); everything after that is cached until the map changes.
 
 To refresh the popularity numbers, copy the percentages from apexlegendsstatus.com's legend popularity page into `data/popularity.json` and update `checked`. The validator checks that every legend is listed and that the shares add up to about 100.
 

@@ -1,20 +1,20 @@
 {
-  "name": "apex-comp-analyser",
+  "name": "apex-buddy",
   "version": "1.0.0",
   "description": "Tell it who's playing, what you want from the squad and which map you're on. It suggests Apex Legends comps that fit, then breaks down whichever one you pick. It's a static page with no build step.",
   "main": "index.js",
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rwnmk/apex-comp-analyser.git"
+    "url": "git+https://github.com/rwnmk/apex-buddy.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rwnmk/apex-comp-analyser/issues"
+    "url": "https://github.com/rwnmk/apex-buddy/issues"
   },
-  "homepage": "https://github.com/rwnmk/apex-comp-analyser#readme",
+  "homepage": "https://github.com/rwnmk/apex-buddy#readme",
   "devDependencies": {
     "@playwright/test": "^1.64.1",
     "@types/node": "^26.6.5"

@@ -11,8 +11,10 @@
 .slot-you { border-style: solid; background: var(--surface-2); }
 .slot-you .slot-main { cursor: default; }
 .slot-you .slot-num { color: var(--trim); }
-.mate-state { display: inline-flex; margin: 0 18px 14px; }
-.mate-state .seg { min-width: 64px; font-size: 12px; }
+.solo-order { display: inline-flex; }
+.solo-order .seg { min-width: 64px; }
+.slot-status.hovering { color: var(--trim); }
+.slot.after:not(.filled) { border-style: dotted; }
 #solo-picker .pick[disabled] { opacity: .45; cursor: default; }
 #solo-picker[hidden], #solo-filters[hidden] { display: none; }
 @media (max-width: 640px) {

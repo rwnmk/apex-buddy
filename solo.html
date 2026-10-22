@@ -17,8 +17,8 @@
     <header class="about">
       <p class="label">apex legends · tools</p>
       <h1 class="hero-name">Solo Queue Picker</h1>
-      <p class="lead">Queuing alone? Pick the map, choose who you are, and add whatever your teammates have hovered or locked. You get the three picks that make the best comp, with the plan each one sets up.</p>
-      <p class="meta">Scores are the same as the <a href="./">Team Comp Analyser</a>'s. Picking third, they're exact. Picking first or second, they're what you can expect given what players tend to pick.</p>
+      <p class="lead">Queuing alone? Pick the map, choose who you are, set where you are in the pick order, and add whatever your teammates have locked or hovered. You get the three picks that make the best comp, with the plan each one sets up.</p>
+      <p class="meta">Scores are the same as the <a href="./">Team Comp Analyser</a>'s. Once both teammates are known, they're exact. Before that, they're what you can expect given what players tend to pick.</p>
       <p class="meta" id="data-meta"></p>
     </header>
 
@@ -54,8 +54,12 @@
           <button type="button" class="btn-term btn-sm" id="btn-new">new match</button>
         </div>
       </div>
+      <div class="stack-sm">
+        <h3 class="label" id="order-h">you pick</h3>
+        <div class="segs solo-order" id="solo-order" role="group" aria-labelledby="order-h"></div>
+      </div>
+      <ol class="slots" id="mates" aria-label="Pick order"></ol>
       <p class="meta" id="lobby-hint"></p>
-      <ol class="slots" id="mates" aria-label="Teammates"></ol>
       <div class="filters" id="solo-filters">
         <label class="search">
           <span class="lambda" aria-hidden="true">›</span>
@@ -87,7 +91,7 @@
         <a href="./">analyser</a>
         <a href="data.html">data</a>
         <a href="https://rwnmk.github.io/">rwnmk.github.io</a>
-        <a href="https://github.com/rwnmk/apex-comp-analyser" class="icon-link"><i class="fa fa-brands fa-github" aria-hidden="true"></i>source</a>
+        <a href="https://github.com/rwnmk/apex-buddy" class="icon-link"><i class="fa fa-brands fa-github" aria-hidden="true"></i>source</a>
       </div>
     </footer>
 

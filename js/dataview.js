@@ -5,7 +5,7 @@ import { $, displayOrder, el, listText, PHASES, planCore, ROLES, SCORING_DEFAULT
 import { validate } from './data.js';
 import { loadData } from './source.js';
 
-const REPO = 'https://github.com/rwnmk/apex-comp-analyser';
+const REPO = 'https://github.com/rwnmk/apex-buddy';
 
 /* "Suggest a change" links open a pre-filled GitHub issue, so disagreements land in one place. */
 const issueUrl = (what, current = '') => `${REPO}/issues/new?${new URLSearchParams({

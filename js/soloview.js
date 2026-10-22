@@ -1,13 +1,15 @@
 /* Solo queue page (solo.html): you, the map and your teammates' picks → the three best picks for you.
    The model is in solo.js; this file is loading, state, the link, and rendering.
 
-   Link: #y=Rowan~28~CD3qSmyq.123&m=olympus&a=wraith:h,bangalore
-     y: you, as a player code (none = "anyone").  m: map.  a: teammates' legends; ":h" = hovering.
+   Link: #y=Rowan~28~CD3qSmyq.123&m=olympus&p=2&a=wraith,bangalore
+     y: you, as a player code (none = "anyone").  m: map.  p: your place in the pick order (1–3).
+     a: the two teammates' legends in pick order, "-" for not entered yet. A teammate who picks
+        before you has locked in; one who picks after you can only be hovering.
    This browser remembers who you are and the map (apex-team-comp.solo.v1); teammates live only in
    the link, so a new match starts clean. The player library is read from the analyser's storage
    and never written here. */
 
-import { $, compKey, displayOrder, el, nameOf, pairKey, PREF_GLYPH, RANK_LABEL, roleRanks, ROLES, SCORING_DEFAULTS, sleep, state, syncSquad } from './core.js';
+import { $, compKey, displayOrder, el, listText, nameOf, pairKey, PREF_GLYPH, RANK_LABEL, roleRanks, ROLES, SCORING_DEFAULTS, sleep, state, syncSquad } from './core.js';
 import { loadData } from './source.js';
 import { validate } from './data.js';
 import { buildPerks, refreshWeights, shownScore } from './model.js';
@@ -18,10 +20,17 @@ import { ALSO, analyserHash, clearCache, judgeComp, needed, SHOWN, soloPicks } f
 const SOLO_KEY = 'apex-team-comp.solo.v1';
 const MATES = 2;
 const CHUNK = 150;                 // comps scored between repaints while filling the cache
+const ORDINAL = ['', '1st', '2nd', '3rd'];
+
+/* The pick numbers of the two teammates, in slot order: you 2nd → [1, 3]. */
+const mateOrder = () => [1, 2, 3].filter(n => n !== solo.pick);
+/* The teammates the model knows about: anyone after you is only hovering. */
+const knownMates = () => solo.slots.map((id, i) => id && { id, hover: mateOrder()[i] > solo.pick }).filter(Boolean);
 
 const solo = {
   me: null,        // { name, prefs, roles } or null for "anyone"
-  mates: [],       // [{ id, hover }]
+  pick: 1,         // your place in the pick order, 1–3
+  slots: [null, null],   // the two teammates' legend ids, in pick order (null = not entered)
   target: null,    // teammate slot the picker fills next (null = first empty)
   run: 0           // bumped per update, so a slow blind run stops when something changes
 };
@@ -33,18 +42,20 @@ function readHash() {
   const params = new URLSearchParams(location.hash.slice(1));
   if (params.has('y')) solo.me = parsePlayers(params.get('y'))[0] || null;
   if (location.hash.length > 1) state.map = state.data.maps[params.get('m')] ? params.get('m') : null;   // a link with no m= means any map
-  solo.mates = [];
-  for (const part of (params.get('a') || '').split(',').filter(Boolean)) {
-    const [id, flag] = part.toLowerCase().split(':');
-    if (state.byId.has(id) && !solo.mates.some(m => m.id === id) && solo.mates.length < MATES) solo.mates.push({ id, hover: flag === 'h' });
-  }
+  const ids = (params.get('a') || '').split(',').slice(0, MATES).map(part => part.toLowerCase().split(':')[0]);
+  solo.slots = [0, 1].map(i => (state.byId.has(ids[i]) && ids.indexOf(ids[i]) === i ? ids[i] : null));
+  // no p= (links from before the pick order existed): you pick after everyone listed
+  const p = +params.get('p');
+  solo.pick = [1, 2, 3].includes(p) ? p : solo.slots.filter(Boolean).length + 1;
+  solo.target = null;
 }
 
 function writeHash() {
   const parts = [];
   if (solo.me) parts.push('y=' + playerCode(solo.me));
   if (state.map) parts.push('m=' + state.map);
-  if (solo.mates.length) parts.push('a=' + solo.mates.map(m => m.id + (m.hover ? ':h' : '')).join(','));
+  parts.push('p=' + solo.pick);
+  if (solo.slots.some(Boolean)) parts.push('a=' + solo.slots.map(id => id || '-').join(',').replace(/,-$/, ''));
   const h = parts.length ? '#' + parts.join('&') : '';
   if (location.hash !== h) history.replaceState(null, '', h || location.pathname + location.search);
 }
@@ -76,17 +87,18 @@ function changed({ weights = false } = {}) {
   update();
 }
 
+const nextSlot = () => solo.target ?? solo.slots.indexOf(null);   // -1: both entered
+
 function setMate(id) {
-  if (solo.mates.some(m => m.id === id)) return;
-  const at = solo.target ?? solo.mates.length;
-  if (at >= MATES) return;                       // both picked: click a teammate first to change them
-  if (at < solo.mates.length) solo.mates[at] = { id, hover: solo.mates[at].hover };
-  else solo.mates.push({ id, hover: false });
+  if (solo.slots.includes(id)) return;
+  const at = nextSlot();
+  if (at < 0) return;                            // both entered: click a teammate first to change them
+  solo.slots[at] = id;
   solo.target = null;
   changed();
 }
-function clearMate(i) { solo.mates.splice(i, 1); solo.target = null; changed(); }
-function setHover(i, hover) { solo.mates[i].hover = hover; changed(); }
+function clearMate(i) { solo.slots[i] = null; solo.target = null; changed(); }
+function setPick(n) { solo.pick = n; solo.target = null; changed(); }
 function setTarget(i) { solo.target = solo.target === i ? null : i; renderInputs(); }
 
 /* ---- rendering: inputs ---- */
@@ -113,37 +125,45 @@ function renderInputs() {
   const chip = (id, label) => el('button', { type: 'button', class: 'tagchip sq', 'aria-pressed': String(state.map === id), text: label, onclick: () => { state.map = id; changed({ weights: true }); } });
   $('#solo-map').replaceChildren(chip(null, 'any'), ...Object.entries(maps).map(([id, m]) => chip(id, m.name.toLowerCase())));
 
-  // teammate slots, then you
-  const pos = Math.min(solo.mates.length, MATES) + 1;
-  $('#mates').replaceChildren(...Array.from({ length: MATES }, (_, i) => {
-    const m = solo.mates[i];
-    const l = m && state.byId.get(m.id);
-    const target = i === (solo.target ?? solo.mates.length);
-    return el('li', { class: `slot sq${l ? ' filled' : ''}${target ? ' target' : ''}`, 'data-mate': String(i) },
-      el('button', { type: 'button', class: 'slot-main', 'aria-pressed': String(solo.target === i), 'aria-label': l ? `Teammate ${i + 1}: ${l.name}. Replace` : `Teammate ${i + 1}: empty`, onclick: () => setTarget(i) },
-        el('span', { class: 'slot-num', text: `teammate ${i + 1}` }),
+  // your place in the pick order
+  $('#solo-order').replaceChildren(...[1, 2, 3].map(n => el('button', {
+    type: 'button', class: 'seg', 'aria-pressed': String(solo.pick === n), 'data-pos': String(n), text: ORDINAL[n], onclick: () => setPick(n)
+  })));
+
+  // the three picks in order: two teammates and you
+  const order = mateOrder();
+  const next = nextSlot();
+  const slots = [0, 1].map(i => {
+    const id = solo.slots[i];
+    const l = id && state.byId.get(id);
+    const n = order[i];
+    const before = n < solo.pick;
+    const status = l ? (before ? 'locked in' : 'hovering') : before ? 'not entered yet' : 'still to pick';
+    return [n, el('li', { class: `slot sq${l ? ' filled' : ''}${i === next ? ' target' : ''}${before ? ' before' : ' after'}`, 'data-mate': String(i) },
+      el('button', { type: 'button', class: 'slot-main', 'aria-pressed': String(solo.target === i), 'aria-label': `${ORDINAL[n]} pick, a teammate: ${l ? `${l.name}, ${status}. Change` : status}`, onclick: () => setTarget(i) },
+        el('span', { class: 'slot-num', text: `${ORDINAL[n]} pick · teammate` }),
         el('span', { class: `slot-name${l ? '' : ' slot-empty'}`, text: l ? l.name : '—' }),
-        l ? el('span', { class: 'slot-class', text: classes[l.class].label }) : null),
-      l ? el('div', { class: 'segs mate-state', role: 'group', 'aria-label': `${l.name}: hovering or locked` },
-        el('button', { type: 'button', class: 'seg', 'aria-pressed': String(m.hover), 'data-hover': `${i}-hover`, text: 'hover', onclick: () => setHover(i, true) }),
-        el('button', { type: 'button', class: 'seg', 'aria-pressed': String(!m.hover), 'data-hover': `${i}-locked`, text: 'locked', onclick: () => setHover(i, false) })) : null,
-      l ? el('button', { type: 'button', class: 'slot-x', 'aria-label': `Remove ${l.name}`, text: '×', onclick: () => clearMate(i) }) : null);
-  }), el('li', { class: 'slot sq slot-you' },
+        el('span', { class: `slot-class slot-status${l && !before ? ' hovering' : ''}`, text: l ? `${classes[l.class].label.toLowerCase()} · ${status}` : status })),
+      l ? el('button', { type: 'button', class: 'slot-x', 'aria-label': `Remove ${l.name}`, text: '×', onclick: () => clearMate(i) }) : null)];
+  });
+  const you = [solo.pick, el('li', { class: 'slot sq slot-you', 'data-you': '' },
     el('div', { class: 'slot-main' },
-      el('span', { class: 'slot-num', text: 'you' }),
+      el('span', { class: 'slot-num', text: `${ORDINAL[solo.pick]} pick · you` }),
       el('span', { class: 'slot-name', text: solo.me ? solo.me.name : 'you' }),
-      el('span', { class: 'slot-class', text: `picking ${['first', 'second', 'third'][pos - 1]}` }))));
+      el('span', { class: 'slot-class', text: 'see the picks below' })))];
+  $('#mates').replaceChildren(...[...slots, you].sort((a, b) => a[0] - b[0]).map(([, li]) => li));
 
   // legend picker: hidden once both teammates have picked, until one is clicked to change it
-  const full = solo.mates.length >= MATES && solo.target == null;
-  $('#lobby-hint').textContent = full ? 'Both teammates have picked. Click one to change it.'
-    : solo.target != null && solo.mates[solo.target] ? `Choose who replaces ${nameOf(solo.mates[solo.target].id)}, or click them again to cancel.`
-      : 'Add what your teammates have picked, in any order. Mark a pick as a hover if they might still change it.';
+  const full = next < 0;
+  const which = next >= 0 ? `the ${ORDINAL[order[next]]} pick` : '';
+  $('#lobby-hint').textContent = full ? 'Both teammates are entered. Click one to change it.'
+    : solo.target != null && solo.slots[solo.target] ? `Choose what ${which} changed to, or click them again to cancel.`
+      : `Choose ${which}'s legend${order[next] > solo.pick ? ' if they\'re hovering one' : ''}, or click the other teammate to fill theirs first.`;
   $('#solo-filters').hidden = $('#solo-picker').hidden = full;
   const q = $('#solo-search').value.trim().toLowerCase();
   const shown = displayOrder().filter(l => !q || l.name.toLowerCase().includes(q) || l.id.includes(q) || classes[l.class].label.toLowerCase().includes(q));
   $('#solo-picker').replaceChildren(...(shown.length ? shown.map(l => {
-    const on = solo.mates.some(m => m.id === l.id);
+    const on = solo.slots.includes(l.id);
     return el('button', {
       type: 'button', class: 'pick sq', 'aria-pressed': String(on), 'data-legend': l.id, disabled: on ? '' : null,
       'aria-label': `${l.name}${on ? ', picked by a teammate' : ''}`, onclick: () => setMate(l.id)
@@ -153,11 +173,21 @@ function renderInputs() {
 
 /* ---- rendering: suggestions ---- */
 
-const POSITION_TEXT = [
-  'Picking first, blind: each option is scored against what your two teammates are likely to pick, weighted by popularity.',
-  'Picking second: each option is scored against what your last teammate is likely to pick, weighted by popularity.',
-  'Picking third: these scores are exact.'
-];
+/* What the scores mean for this lobby: exact once both teammates are known, otherwise expected. */
+function positionText() {
+  const order = mateOrder();
+  const name = (i) => nameOf(solo.slots[i]);
+  const missing = [0, 1].filter(i => !solo.slots[i] && order[i] < solo.pick);
+  const hovering = [0, 1].filter(i => solo.slots[i] && order[i] > solo.pick);
+  const known = solo.slots.filter(Boolean).length;
+  return [
+    `You pick ${ORDINAL[solo.pick]}.`,
+    known === 2 ? 'Both teammates are known, so these scores are exact' + (hovering.length ? `, assuming ${listText(hovering.map(name))} keeps that hover. Each pick also shows what to expect if they switch.` : '.')
+      : known === 1 ? `Each option is scored against what the ${ORDINAL[order[solo.slots.indexOf(null)]]} pick ${order[solo.slots.indexOf(null)] < solo.pick ? 'probably locked' : 'is likely to choose'}, weighted by popularity${hovering.length ? `, assuming ${name(hovering[0])} keeps that hover` : ''}.`
+        : 'Picking blind: each option is scored against what both teammates are likely to choose, weighted by popularity.',
+    missing.length ? `The ${listText(missing.map(i => ORDINAL[order[i]]))} pick has already locked in: enter it for a better answer.` : ''
+  ].filter(Boolean).join(' ');
+}
 const others = (comp, id) => comp.ids.filter(x => x !== id);
 const planBadge = (pid) => el('span', { class: `badge ${pid ? 'plan' : 'dodo'}`, title: pid ? `Qualifies as ${planLabel(pid)}` : 'Fits no plan', text: planLabel(pid) });
 const knownBadge = (ids) => {
@@ -193,7 +223,7 @@ function card(x, n, exact) {
 function renderPicks(r) {
   const top = r.list.slice(0, SHOWN);
   const also = r.list.slice(SHOWN, SHOWN + ALSO);
-  $('#solo-position').textContent = POSITION_TEXT[r.position - 1];
+  $('#solo-position').textContent = positionText();
   if (!top.length) return $('#solo-out').replaceChildren(el('p', { class: 't-err', text: 'Nothing left that you play. Mark fewer legends as × in the analyser.' }));
   $('#solo-out').replaceChildren(
     el('ol', { class: 'spicks', 'aria-label': 'Suggested picks' }, top.map((x, n) => card(x, n, r.exact))),
@@ -211,7 +241,8 @@ function renderPicks(r) {
    in chunks so the page stays responsive, then show the picks. */
 async function update() {
   const my = ++solo.run;
-  const todo = needed(solo.mates);
+  const mates = knownMates();
+  const todo = needed(mates);
   const slow = todo.length > CHUNK;
   $('#solo-out').setAttribute('aria-busy', String(slow));
   for (let i = 0; i < todo.length; i += CHUNK) {
@@ -224,7 +255,7 @@ async function update() {
   }
   $('#solo-status').textContent = slow ? `› done: ${todo.length.toLocaleString('en-GB')} comps scored` : '';
   $('#solo-out').setAttribute('aria-busy', 'false');
-  renderPicks(soloPicks(solo.mates, solo.me));
+  renderPicks(soloPicks(mates, solo.me));
 }
 
 /* ---- load + wiring ---- */
@@ -282,7 +313,7 @@ async function load() {
     const first = $('#solo-picker .pick:not([disabled])');
     if (first) { e.target.value = ''; setMate(first.dataset.legend); e.target.focus(); }
   });
-  $('#btn-new').addEventListener('click', () => { solo.mates = []; solo.target = null; $('#solo-search').value = ''; changed(); });
+  $('#btn-new').addEventListener('click', () => { solo.slots = [null, null]; solo.target = null; $('#solo-search').value = ''; changed(); });
   $('#btn-share').addEventListener('click', async (e) => {
     const btn = e.currentTarget;
     try { await navigator.clipboard.writeText(location.href); btn.textContent = 'copied'; }
